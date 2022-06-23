@@ -50,7 +50,7 @@ Game::~Game(){
 void Game::run(){
     while(!GetState().QuitRequested()){
         GetState.Update(0);
-        GetState->Render();
+        GetState.Render();
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
     }
