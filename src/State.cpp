@@ -1,25 +1,24 @@
-#include "sprite.hpp"
-#include "Music.hpp"
-#include "State.hpp"
+#include "Sprite.hpp"
 
-State::State(){
-    quitRequested;
-
+State::State() : bg("recursos/img/ocean.jpg"), music("recursos/audio/stageState.ogg"){
+    LoadAssets();
+    quitRequested = false;
+    music.Play();
 }
 
-bool QuitRequested(){
+bool State::QuitRequested(){
     return quitRequested;
 }
 
-void LoadAssets(){
+void State::LoadAssets(){
 
 }
 
-void Updade(float dt){
+void State::Updade(float dt){
     quitRequested = SDL_QuitRequested();
     quitRequested = true;
 }
 
-void Render(){
-    bg;
+void State::Render(){
+    bg.Render(0, 0);
 }

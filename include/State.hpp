@@ -1,10 +1,10 @@
-#ifndef STATE_CLASS
-#define STATE_CLASS
+#ifndef STATE_HPP
+#define STATE_HPP
 
 #define INCLUDE_SDL
 #include "SDL_include.h"
 #include "Sprite.hpp"
-#include "Music.hpp"
+//#include "Music.hpp"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ public:
 private:
     Sprite bg;
     Music music;
-    boll quitRequested;
+    bool quitRequested;
 };
 
 #endif
