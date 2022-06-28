@@ -1,4 +1,4 @@
-dep/Music.d bin/Music.o: src/Music.cpp include/Game.hpp \
+dep/State.d bin/State.o: src/State.cpp include/Game.hpp \
  include/SDL_include.h C:/SDL2/include/SDL2/SDL.h \
  C:/SDL2/include/SDL2/SDL_main.h C:/SDL2/include/SDL2/SDL_stdinc.h \
  C:/SDL2/include/SDL2/SDL_config.h C:/SDL2/include/SDL2/SDL_platform.h \
@@ -111,7 +111,7 @@ dep/Music.d bin/Music.o: src/Music.cpp include/Game.hpp \
  C:/SDL2/include/SDL2/SDL_locale.h C:/SDL2/include/SDL2/SDL_misc.h \
  C:/SDL2/include/SDL2/SDL_image.h C:/SDL2/include/SDL2/SDL.h \
  C:/SDL2/include/SDL2/SDL_mixer.h C:/SDL2/include/SDL2/SDL_ttf.h \
- include/Music.hpp include/Game.hpp include/Sprite.hpp include/State.hpp \
+ include/Music.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios \
@@ -207,7 +207,8 @@ dep/Music.d bin/Music.o: src/Music.cpp include/Game.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/basic_ios.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream \
- C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc \
+ include/Sprite.hpp include/Game.hpp include/State.hpp
 include/Game.hpp:
 include/SDL_include.h:
 C:/SDL2/include/SDL2/SDL.h:
@@ -353,9 +354,6 @@ C:/SDL2/include/SDL2/SDL.h:
 C:/SDL2/include/SDL2/SDL_mixer.h:
 C:/SDL2/include/SDL2/SDL_ttf.h:
 include/Music.hpp:
-include/Game.hpp:
-include/Sprite.hpp:
-include/State.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios:
@@ -457,3 +455,6 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/basic_ios.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc:
+include/Sprite.hpp:
+include/Game.hpp:
+include/State.hpp:

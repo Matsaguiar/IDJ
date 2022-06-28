@@ -7,7 +7,10 @@
 #define INCLUDE_SDL_MIXER
 
 #include "SDL_include.h"
+#include "Music.hpp"
+#include "Sprite.hpp"
 #include "State.hpp"
+
 #include <iostream>
 
 using namespace std;
@@ -29,4 +32,4 @@ public:
     static Game &GetInstance();
 };
 
-#endif GAME_HPP
+#endif

@@ -10,6 +10,7 @@ using namespace std;
 class Music{
 public:
     Music();
+    ~Music();
     Music(string file);
     void Play(int times = -1);
     void Stop(int msToStop = 1500);

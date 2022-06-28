@@ -1,4 +1,4 @@
-#include "State.hpp"
+#include "Game.hpp"
 
 State::State() : bg("recursos/img/ocean.jpg"), music("recursos/audio/stageState.ogg"){
     LoadAssets();
