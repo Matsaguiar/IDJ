@@ -4,7 +4,7 @@
 #define INCLUDE_SDL
 #include "SDL_include.h"
 #include "Sprite.hpp"
-//#include "Music.hpp"
+#include "Music.hpp"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ public:
     State();
     bool QuitRequested();
     void LoadAssets();
-    void Updade(float dt);
+    void Update(float dt);
     void Render();
 
 private:

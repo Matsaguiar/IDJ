@@ -1,4 +1,4 @@
-#include "Sprite.hpp"
+#include "State.hpp"
 
 State::State() : bg("recursos/img/ocean.jpg"), music("recursos/audio/stageState.ogg"){
     LoadAssets();
@@ -14,7 +14,7 @@ void State::LoadAssets(){
 
 }
 
-void State::Updade(float dt){
+void State::Update(float dt){
     quitRequested = SDL_QuitRequested();
     quitRequested = true;
 }

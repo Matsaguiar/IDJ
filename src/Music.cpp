@@ -25,7 +25,7 @@ void Music::Stop(int msToStop = 1500){
 }
 
 void Music::Open(string file){
-    music = Mix_LoadMUS(file.c_str);
+    music = Mix_LoadMUS(file.c_str());
     if(music == nullptr)
         cout << "Erro SDL_Music_Open: " << SDL_GetError() << endl;
 }

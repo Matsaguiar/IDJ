@@ -9,7 +9,6 @@
 #include "SDL_include.h"
 #include "State.hpp"
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -18,7 +17,7 @@ private:
     Game(string title, int width, int height);
     
     static Game* instance;
-    SDL_Window* Window;
+    SDL_Window* window;
     SDL_Renderer* renderer;
     State* state;
 
@@ -26,8 +25,8 @@ public:
     ~Game();
     void run();
     SDL_Renderer* GetRenderer();
-    State& GetState();
-    static Game& GetInstance();
+    State &GetState();
+    static Game &GetInstance();
 };
 
 #endif GAME_HPP
