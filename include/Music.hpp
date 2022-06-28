@@ -19,6 +19,4 @@ private:
     Mix_Music* music;
 };
 
-
-
 #endif

@@ -9,18 +9,18 @@ Music::Music(string file){
 }
 
 Music::~Music(){
-    Stop(0);
+    Stop(1500);
     Mix_FreeMusic(music);
 }
 
-void Music::Play(int times = -1){
+void Music::Play(int times){
     if(music != nullptr)
         Mix_PlayMusic(music, times);
     else
         cout << "Erro SDL_Music: " << SDL_GetError() << endl;
 }
 
-void Music::Stop(int msToStop = 1500){
+void Music::Stop(int msToStop){
     Mix_FadeOutMusic(msToStop);
 }
 
