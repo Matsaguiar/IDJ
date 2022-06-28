@@ -111,7 +111,7 @@ dep/main.d bin/main.o: src/main.cpp include/Game.hpp \
  C:/SDL2/include/SDL2/SDL_locale.h C:/SDL2/include/SDL2/SDL_misc.h \
  C:/SDL2/include/SDL2/SDL_image.h C:/SDL2/include/SDL2/SDL.h \
  C:/SDL2/include/SDL2/SDL_mixer.h C:/SDL2/include/SDL2/SDL_ttf.h \
- include/State.hpp include/Sprite.hpp include/Game.hpp \
+ include/Music.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios \
@@ -208,7 +208,7 @@ dep/main.d bin/main.o: src/main.cpp include/Game.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc \
- include/Music.hpp
+ include/Sprite.hpp include/Game.hpp include/State.hpp
 include/Game.hpp:
 include/SDL_include.h:
 C:/SDL2/include/SDL2/SDL.h:
@@ -353,9 +353,7 @@ C:/SDL2/include/SDL2/SDL_image.h:
 C:/SDL2/include/SDL2/SDL.h:
 C:/SDL2/include/SDL2/SDL_mixer.h:
 C:/SDL2/include/SDL2/SDL_ttf.h:
-include/State.hpp:
-include/Sprite.hpp:
-include/Game.hpp:
+include/Music.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios:
@@ -457,4 +455,6 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/basic_ios.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc:
-include/Music.hpp:
+include/Sprite.hpp:
+include/Game.hpp:
+include/State.hpp:

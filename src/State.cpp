@@ -15,8 +15,10 @@ void State::LoadAssets(){
 }
 
 void State::Update(float dt){
-    quitRequested = SDL_QuitRequested();
-    quitRequested = true;
+    if (SDL_QuitRequested() == true){
+        music.Stop();
+        quitRequested = true;
+    }
 }
 
 void State::Render(){
