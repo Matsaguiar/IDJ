@@ -14,9 +14,9 @@ public:
     Vec2 Mult(float escalar);
     float magnitude();
     Vec2 Normal();
-    float distancia();
+    float distancia(Vec2 v);
     float inclinacaoX();
-    float inclinacao();
+    float inclinacao(Vec2 v);
     Vec2 Rotacao(float angulacao);
 
     //Operadores de atribuicao

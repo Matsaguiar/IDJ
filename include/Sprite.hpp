@@ -4,18 +4,22 @@
 #define INCLUDE_SDL_IMAGE
 #include "SDL_include.h"
 #include "Game.hpp"
+#include "Component.hpp"
 #include <iostream>
 
 using namespace std;
 
-class Sprite{
+class Sprite : public Component{
 public:
-    Sprite();
-    Sprite(string file);
+    Sprite (GameObject &associated);
+    Sprite (GameObject &associated, string file);
+    void Update(float dt);
+    bool Is(string type);
+
     ~Sprite();
     void Open(string file);
     void SetClip(int x, int y, int w, int h);
-    void Render(int x, int y);
+    void Render();
     int GetWeidth();
     int GetHeight();
     bool IsOpen();

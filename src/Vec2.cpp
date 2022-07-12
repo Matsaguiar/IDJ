@@ -1,11 +1,9 @@
 #include "Vec2.hpp"
 
 Vec2::Vec2() : x(0), y(0) { 
-
 }
 
 Vec2::Vec2(float x, float y) : x(0), y(0) { 
-
 }
 
 Vec2 Vec2::Soma(Vec2 v){ 
@@ -25,19 +23,22 @@ float Vec2::magnitude(){
 }
 
 Vec2 Vec2::Normal(){ 
-    return ;
+    float mamagnitudeg = this->magnitude();
+    return Vec2(x / magnitude, y / magnitude);
 }
 
-float Vec2::distancia(){ 
-    return ;
+float Vec2::distancia(Vec2 v){ 
+    Vec2 v2 = this->Sub(v)
+;    return v2.magnitude();
 }   
 
 float Vec2::inclinacaoX(){ 
     return atan2(x ,y);
 }
 
-float Vec2::inclinacao(){ 
-    return ;
+float Vec2::inclinacao(Vec2 v){
+    Vec2 v2 = this->Sub(v); 
+    return v2.inclinacaoX;
 }
 
 Vec2 Vec2::Rotacao(float angulacao){ 

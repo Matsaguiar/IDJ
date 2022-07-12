@@ -1,11 +1,9 @@
 #include "Rect.hpp"
 
 Rect::Rect() : x(0), y(0), w(0), h(0) {
-
 }
 
 Rect::Rect(float x, float y, float w, float h) : x(0), y(0), w(0), h(0) { 
-
 }
 
 Rect Rect::SomaVec2(Vec2 v){ 
@@ -21,7 +19,8 @@ Vec2 Rect::GetCoordenadasCentro(){
 }
 
 float Rect::distanciaRetangulos(Rect r){ 
-
+    Vec2 v = this->GetCoordenadasCentro();
+    return v.distancia(r.GetCoordenadasCentro());
 }
 
 bool Rect::dentroRect(){ 

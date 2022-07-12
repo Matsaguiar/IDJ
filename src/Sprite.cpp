@@ -1,13 +1,23 @@
 #include "Game.hpp"
 
-Sprite::Sprite(){
+Sprite::Sprite(GameObject& associated) : Component(associated){
     texture = nullptr;
 }
 
-Sprite::Sprite(string file){
+Sprite::Sprite(GameObject &associated, string file) : Component(associated){
     texture = nullptr;
     Open(file);
 }
+
+void Sprite::Update(float dt) {
+}
+
+bool Sprite::Is(string type) {
+    if (type == "Sprite")
+        return true;
+    return false;
+}
+
 Sprite::~Sprite(){
     if(texture != nullptr)
         SDL_DestroyTexture(texture);
@@ -23,6 +33,8 @@ void Sprite::Open(string file){
     
     SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
     SetClip(0, 0, width, height);
+    associated.box.h = height;
+    associated.box.w = width;
 }
 
 void Sprite::SetClip(int x, int y, int w, int h){
@@ -32,8 +44,8 @@ void Sprite::SetClip(int x, int y, int w, int h){
     clipRect.h = h;
 }
 
-void Sprite::Render(int x, int y){
-    SDL_Rect dstrect = {x, y, clipRect.w, clipRect.h};
+void Sprite::Render(){
+    SDL_Rect dstrect = {associated.box.x, associated.box.y, associated.box.w, associated.box.h};
     
     SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstrect);
 }
