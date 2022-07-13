@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include <memory.h>
+#include <memory>
 #include "Component.hpp"
 #include "Rect.hpp"
 

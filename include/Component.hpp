@@ -2,11 +2,9 @@
 #define COMPONENT_HPP
 
 #include <iostream>
-#include "GameObject.hpp"
+#include "Component.hpp"
 
 using namespace std;
-
-class GameObject;
 
 class Component {
 public:
