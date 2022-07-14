@@ -1,4 +1,4 @@
-dep/State.d bin/State.o: src/State.cpp include/State.hpp \
+dep/Sound.d bin/Sound.o: src/Sound.cpp include/Sound.hpp \
  include/SDL_include.h C:/SDL2/include/SDL2/SDL.h \
  C:/SDL2/include/SDL2/SDL_main.h C:/SDL2/include/SDL2/SDL_stdinc.h \
  C:/SDL2/include/SDL2/SDL_config.h C:/SDL2/include/SDL2/SDL_platform.h \
@@ -109,8 +109,7 @@ dep/State.d bin/State.o: src/State.cpp include/State.hpp \
  C:/SDL2/include/SDL2/SDL_shape.h C:/SDL2/include/SDL2/SDL_system.h \
  C:/SDL2/include/SDL2/SDL_timer.h C:/SDL2/include/SDL2/SDL_version.h \
  C:/SDL2/include/SDL2/SDL_locale.h C:/SDL2/include/SDL2/SDL_misc.h \
- include/Sprite.hpp C:/SDL2/include/SDL2/SDL_image.h \
- C:/SDL2/include/SDL2/SDL.h include/Component.hpp \
+ C:/SDL2/include/SDL2/SDL_mixer.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios \
@@ -207,7 +206,7 @@ dep/State.d bin/State.o: src/State.cpp include/State.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc \
- include/GameObject.hpp \
+ include/Component.hpp include/GameObject.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h \
@@ -237,9 +236,8 @@ dep/State.d bin/State.o: src/State.cpp include/State.hpp \
  include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h include/Sound.hpp \
- C:/SDL2/include/SDL2/SDL_mixer.h include/Music.hpp include/Face.hpp
-include/State.hpp:
+ C:/TDM-GCC-32/include/math.h
+include/Sound.hpp:
 include/SDL_include.h:
 C:/SDL2/include/SDL2/SDL.h:
 C:/SDL2/include/SDL2/SDL_main.h:
@@ -379,10 +377,7 @@ C:/SDL2/include/SDL2/SDL_timer.h:
 C:/SDL2/include/SDL2/SDL_version.h:
 C:/SDL2/include/SDL2/SDL_locale.h:
 C:/SDL2/include/SDL2/SDL_misc.h:
-include/Sprite.hpp:
-C:/SDL2/include/SDL2/SDL_image.h:
-C:/SDL2/include/SDL2/SDL.h:
-include/Component.hpp:
+C:/SDL2/include/SDL2/SDL_mixer.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios:
@@ -484,6 +479,7 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/basic_ios.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc:
+include/Component.hpp:
 include/GameObject.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h:
@@ -516,7 +512,3 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
-include/Sound.hpp:
-C:/SDL2/include/SDL2/SDL_mixer.h:
-include/Music.hpp:
-include/Face.hpp:

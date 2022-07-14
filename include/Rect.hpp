@@ -13,7 +13,7 @@ public:
     Rect SubVec2(Vec2 v);
     Vec2 GetCoordenadasCentro();
     float distanciaRetangulos(Rect r);
-    bool dentroRect();
+    bool dentroRect(Vec2 v);
 
 };
 

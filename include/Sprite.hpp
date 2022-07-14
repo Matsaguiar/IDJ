@@ -1,9 +1,10 @@
 #ifndef SPRITE_HPP
 #define SPRITE_HPP
 
+#define INCLUDE_SDL
 #define INCLUDE_SDL_IMAGE
+
 #include "SDL_include.h"
-#include "Game.hpp"
 #include "Component.hpp"
 #include <iostream>
 
@@ -11,8 +12,8 @@ using namespace std;
 
 class Sprite : public Component{
 public:
-    Sprite (GameObject &associated);
-    Sprite (GameObject &associated, string file);
+    Sprite(GameObject &associated);
+    Sprite(GameObject &associated, string file);
     void Update(float dt);
     bool Is(string type);
 

@@ -49,7 +49,7 @@ void Sound::Render(){
 
 }
 
-void Sound::Is(string type){
+bool Sound::Is(string type){
     if(type == "Sound")
         return true;
     return false;

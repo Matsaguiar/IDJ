@@ -7,7 +7,7 @@ Face::Face(GameObject& associated) : Component(associated){
 void Face::Damage(int damage){
     this->hitpoints-=damage;
     if(hitpoints <= 0){
-        Sound* sound = (Sound*) associated.GetComponent("Sound");
+        Sound* sound = (Sound *)this->associated.GetComponent("Sound");
         associated.RequestDelete();
         if(sound != nullptr)
             sound->Play(0);

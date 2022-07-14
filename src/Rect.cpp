@@ -23,6 +23,6 @@ float Rect::distanciaRetangulos(Rect r){
     return v.distancia(r.GetCoordenadasCentro());
 }
 
-bool Rect::dentroRect(){ 
-
+bool Rect::dentroRect(Vec2 v){ 
+    return (v.x < (x + w) && v.x >= x) && (v.y < (y + h) && v.y >= y);
 }

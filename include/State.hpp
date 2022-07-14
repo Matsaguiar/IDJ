@@ -4,7 +4,14 @@
 #define INCLUDE_SDL
 #include "SDL_include.h"
 #include "Sprite.hpp"
+#include "Sound.hpp"
 #include "Music.hpp"
+#include <iostream>
+#include <vector>
+#include <memory>
+#include <math.h>
+#include "GameObject.hpp"
+#include "Face.hpp"
 
 using namespace std;
 
@@ -16,10 +23,15 @@ public:
     void Update(float dt);
     void Render();
 
+    ~State();
+
 private:
-    Sprite bg;
     Music music;
     bool quitRequested;
+
+    void Input();
+    void AddObject(int mouseX, int mouseY);
+    vector<unique_ptr<GameObject>> objectArray;
 };
 
 #endif

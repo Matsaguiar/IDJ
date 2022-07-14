@@ -6,15 +6,15 @@ Vec2::Vec2() : x(0), y(0) {
 Vec2::Vec2(float x, float y) : x(0), y(0) { 
 }
 
-Vec2 Vec2::Soma(Vec2 v){ 
+Vec2 Vec2::operator+(Vec2 v){ 
     return Vec2(x + v.x, y + v.y);
 }
 
-Vec2 Vec2::Sub(Vec2 v){ 
+Vec2 Vec2::operator-(Vec2 v){ 
     return Vec2(x - v.x, y - v.y);
 }
 
-Vec2 Vec2::Mult(float escalar){ 
+Vec2 Vec2::operator*(float escalar){ 
     return Vec2(x * escalar, y * escalar);
 }
 
@@ -23,12 +23,12 @@ float Vec2::magnitude(){
 }
 
 Vec2 Vec2::Normal(){ 
-    float mamagnitudeg = this->magnitude();
+    float magnitude = this->magnitude();
     return Vec2(x / magnitude, y / magnitude);
 }
 
 float Vec2::distancia(Vec2 v){ 
-    Vec2 v2 = this->Sub(v)
+    Vec2 v2 = this->operator-(v)
 ;    return v2.magnitude();
 }   
 
@@ -37,14 +37,14 @@ float Vec2::inclinacaoX(){
 }
 
 float Vec2::inclinacao(Vec2 v){
-    Vec2 v2 = this->Sub(v); 
-    return v2.inclinacaoX;
+    Vec2 v2 = this->operator-(v); 
+    return v2.inclinacaoX();
 }
 
 Vec2 Vec2::Rotacao(float angulacao){ 
     return Vec2((x * cos(angulacao)) - (y * sin(angulacao)), (y * cos(angulacao)) + (x * sin(angulacao)));
 }
-
+/*
 Vec2& Vec2::operator+(Vec2& v){ 
     x += v.x;
     y += v.y;
@@ -64,10 +64,4 @@ Vec2& Vec2::operator=(Vec2& v){
     y = v.y;
 
     return *this;
-}
-
-bool Vec2::operator==(Vec2& v){ 
-    if(x == v.x && y == v.y)
-        return true;   
-    return false;
-}
+}*/

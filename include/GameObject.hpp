@@ -18,7 +18,7 @@ public:
     void Update(float dt);
     void Render();
     bool IsDead();
-    void ResquestDelete();
+    void RequestDelete();
     void AddComponent(Component* cpt);
     void RemoveComponent(Component* cpt);
     Component* GetComponent(string type);

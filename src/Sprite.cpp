@@ -1,4 +1,4 @@
-#include "Game.hpp"
+#include "Sprite.hpp"
 
 Sprite::Sprite(GameObject& associated) : Component(associated){
     texture = nullptr;

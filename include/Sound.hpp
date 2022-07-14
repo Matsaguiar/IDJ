@@ -1,6 +1,7 @@
-#ifndef COMPONENT_HPP
-#define COMPONENT_HPP
+#ifndef SOUND_HPP
+#define SOUND_HPP
 
+#define INCLUDE_SDL
 #define INCLUDE_SDL_MIXER
 #include "SDL_include.h"
 #include <iostream>
@@ -20,7 +21,7 @@ public:
     bool IsOpen();
     void Update(float dt);
     void Render();
-    void Is(string type);
+    bool Is(string type);
 
 private:
     Mix_Chunk* chunk;

@@ -2,13 +2,8 @@
 #define GAME_HPP
 
 #define INCLUDE_SDL
-#define INCLUDE_SDL_TTF
-#define INCLUDE_SDL_IMAGE
-#define INCLUDE_SDL_MIXER
 
 #include "SDL_include.h"
-#include "Music.hpp"
-#include "Sprite.hpp"
 #include "State.hpp"
 
 #include <iostream>
@@ -27,7 +22,7 @@ private:
 public:
     ~Game();
     void run();
-    SDL_Renderer* GetRenderer();
+    SDL_Renderer *GetRenderer();
     State &GetState();
     static Game &GetInstance();
 };
