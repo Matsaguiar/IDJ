@@ -5,6 +5,7 @@
 #define INCLUDE_SDL_MIXER
 #include "SDL_include.h"
 #include <iostream>
+#include <string>
 #include "Component.hpp"
 #include "GameObject.hpp"
 

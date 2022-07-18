@@ -27,14 +27,14 @@ void GameObject::RequestDelete(){
     isDead = true;
 }
 
-void GameObject::AddComponent(Component* cpt){
+void GameObject::AddComponent(Component *cpt){
     components.emplace_back(cpt);
 }
 
-void GameObject::RemoveComponent(Component* cpt){
+void GameObject::RemoveComponent(Component *cpt){
     for(unsigned int i = 0; i < this -> components.size(); i++){
         if(this -> components[i].get()  == cpt){
-            components.erase(this -> components.begin()+i);
+            components.erase(this->components.begin()+i);
             break;
         }
     }

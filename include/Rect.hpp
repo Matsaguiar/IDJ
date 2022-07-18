@@ -2,6 +2,7 @@
 #define RECT_HPP
 
 #include "Vec2.hpp"
+#include <string>
 
 class Rect{
 public:

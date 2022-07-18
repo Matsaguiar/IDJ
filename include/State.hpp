@@ -10,6 +10,7 @@
 #include <vector>
 #include <memory>
 #include <math.h>
+#include <string>
 #include "GameObject.hpp"
 #include "Face.hpp"
 

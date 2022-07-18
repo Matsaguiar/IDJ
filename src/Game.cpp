@@ -43,7 +43,7 @@ Game::~Game(){
     SDL_Quit();
 }
 
-void Game::run(){
+void Game::Run(){
     while(!GetState().QuitRequested()){
         GetState().Update(0);
         GetState().Render();
@@ -52,7 +52,7 @@ void Game::run(){
     }
 }
 
-SDL_Renderer *Game:: GetRenderer(){
+SDL_Renderer *Game::GetRenderer(){
     return renderer;
 }
 

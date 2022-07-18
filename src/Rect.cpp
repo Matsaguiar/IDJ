@@ -1,21 +1,25 @@
 #include "Rect.hpp"
 
-Rect::Rect() : x(0), y(0), w(0), h(0) {
+Rect::Rect(){
 }
 
-Rect::Rect(float x, float y, float w, float h) : x(0), y(0), w(0), h(0) { 
+Rect::Rect(float x, float y, float w, float h){ 
+    this->x = x;
+    this->y = y;
+    this->w = w;
+    this->h = h;
 }
 
 Rect Rect::SomaVec2(Vec2 v){ 
-    return Rect(x + v.x, y + v.y, w, h);
+    return Rect(this->x + v.x, this->y + v.y, this->w, this->h);
 }
 
 Rect Rect::SubVec2(Vec2 v){ 
-    return Rect(x - v.x, y - v.y, w, h);
+    return Rect(this->x - v.x, this->y - v.y, this->w, this->h);
 }
 
 Vec2 Rect::GetCoordenadasCentro(){ 
-    return Vec2(x + (w/2), y + (h/2));
+    return Vec2((this->x + this->w)/2, (this->y + this->h)/2);
 }
 
 float Rect::distanciaRetangulos(Rect r){ 
@@ -24,5 +28,7 @@ float Rect::distanciaRetangulos(Rect r){
 }
 
 bool Rect::dentroRect(Vec2 v){ 
-    return (v.x < (x + w) && v.x >= x) && (v.y < (y + h) && v.y >= y);
+    if( ((v.x > this->x) && (v.x < (this->x + this->w))) && ((v.y > this->y) && (v.y < (this->y + this->h))))
+        return true;
+    return false;
 }

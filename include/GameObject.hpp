@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <string>
 #include "Component.hpp"
 #include "Rect.hpp"
 

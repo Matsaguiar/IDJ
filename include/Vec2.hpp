@@ -2,6 +2,7 @@
 #define VEC2_HPP
 
 #include <math.h>
+#include <string>
 
 class Vec2{
 public:
@@ -19,7 +20,7 @@ public:
     Vec2 Normal();
     float distancia(Vec2 v);
     float inclinacaoX();
-    float inclinacao(Vec2 v);
+    float inclinacao(Vec2 &v);
     Vec2 Rotacao(float angulacao);
 
     //Operadores de atribuicao

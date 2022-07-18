@@ -6,7 +6,9 @@
 
 #include "SDL_include.h"
 #include "Component.hpp"
+#include "Game.hpp"
 #include <iostream>
+#include <string>
 
 using namespace std;
 

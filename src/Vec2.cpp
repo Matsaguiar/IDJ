@@ -1,48 +1,50 @@
 #include "Vec2.hpp"
 
-Vec2::Vec2() : x(0), y(0) { 
+Vec2::Vec2(){ 
 }
 
-Vec2::Vec2(float x, float y) : x(0), y(0) { 
+Vec2::Vec2(float x, float y){
+    this->x = x;
+    this->y = y; 
 }
 
 Vec2 Vec2::operator+(Vec2 v){ 
-    return Vec2(x + v.x, y + v.y);
+    return Vec2(this->x + v.x, this->y + v.y);
 }
 
 Vec2 Vec2::operator-(Vec2 v){ 
-    return Vec2(x - v.x, y - v.y);
+    return Vec2(this->x - v.x, this->y - v.y);
 }
 
 Vec2 Vec2::operator*(float escalar){ 
-    return Vec2(x * escalar, y * escalar);
+    return Vec2(this->x * escalar, this->y * escalar);
 }
 
 float Vec2::magnitude(){ 
-    return sqrtf((x * x) + (y * y));
+    return sqrtf((this->x * x) + (this->y * y));
 }
 
 Vec2 Vec2::Normal(){ 
     float magnitude = this->magnitude();
-    return Vec2(x / magnitude, y / magnitude);
+    return Vec2(this->x / magnitude, this->y / magnitude);
 }
 
 float Vec2::distancia(Vec2 v){ 
-    Vec2 v2 = this->operator-(v)
-;    return v2.magnitude();
+    Vec2 v2 = this->operator-(v);
+    return v2.magnitude();
 }   
 
 float Vec2::inclinacaoX(){ 
-    return atan2(x ,y);
+    return atan2(this->x, this->y);
 }
 
-float Vec2::inclinacao(Vec2 v){
+float Vec2::inclinacao(Vec2 &v){
     Vec2 v2 = this->operator-(v); 
-    return v2.inclinacaoX();
+    return atan2(v2.y, v2.x);
 }
 
 Vec2 Vec2::Rotacao(float angulacao){ 
-    return Vec2((x * cos(angulacao)) - (y * sin(angulacao)), (y * cos(angulacao)) + (x * sin(angulacao)));
+    return Vec2((this->x * cos(angulacao)) - (this->y * sin(angulacao)), (this->y * cos(angulacao)) + (this->x * sin(angulacao)));
 }
 /*
 Vec2& Vec2::operator+(Vec2& v){ 

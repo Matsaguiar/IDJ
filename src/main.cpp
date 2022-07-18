@@ -1,8 +1,8 @@
 #include "Game.hpp"
 
 int main(int argc, char** argv){
-    Game::GetInstance().run();
+    Game::GetInstance().Run();
     //Game game = Game::GetInstance();
-    //game.run();
+    //game.Run();
     return 0;
 }

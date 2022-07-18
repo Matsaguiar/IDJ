@@ -237,8 +237,9 @@ dep/State.d bin/State.o: src/State.cpp include/State.hpp \
  include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h include/Sound.hpp \
- C:/SDL2/include/SDL2/SDL_mixer.h include/Music.hpp include/Face.hpp
+ C:/TDM-GCC-32/include/math.h include/Game.hpp include/State.hpp \
+ include/Sound.hpp C:/SDL2/include/SDL2/SDL_mixer.h include/Music.hpp \
+ include/Face.hpp
 include/State.hpp:
 include/SDL_include.h:
 C:/SDL2/include/SDL2/SDL.h:
@@ -516,6 +517,8 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
+include/Game.hpp:
+include/State.hpp:
 include/Sound.hpp:
 C:/SDL2/include/SDL2/SDL_mixer.h:
 include/Music.hpp:

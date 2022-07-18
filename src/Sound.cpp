@@ -1,10 +1,10 @@
 #include "Sound.hpp"
 
-Sound::Sound(GameObject& associated) : Component(associated){
+Sound::Sound(GameObject &associated) : Component(associated){
     chunk = nullptr;
 }
 
-Sound::Sound(GameObject& associated, string file) : Sound(associated) {
+Sound::Sound(GameObject &associated, string file) : Sound(associated) {
     Open(file);
 }
 
@@ -16,7 +16,7 @@ Sound::~Sound(){
 }
 
 void Sound::Play(int times){
-    channel = Mix_PlayChannel(-1, chunk, 0);
+    channel = Mix_PlayChannel(-1, this->chunk, 0);
     if(channel == -1)
         cout << "Erro Mix_PlayChannel " << SDL_GetError() << endl;
 

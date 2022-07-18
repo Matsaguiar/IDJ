@@ -1,6 +1,6 @@
 #include "Sprite.hpp"
 
-Sprite::Sprite(GameObject& associated) : Component(associated){
+Sprite::Sprite(GameObject &associated) : Component(associated){
     texture = nullptr;
 }
 
@@ -25,7 +25,7 @@ Sprite::~Sprite(){
 
 void Sprite::Open(string file){
     if(IsOpen())
-        SDL_DestroyTexture(texture);
+        texture = nullptr;
     
     texture = IMG_LoadTexture(Game::GetInstance().GetRenderer(), file.c_str());
     if(texture == nullptr)
@@ -45,9 +45,13 @@ void Sprite::SetClip(int x, int y, int w, int h){
 }
 
 void Sprite::Render(){
-    SDL_Rect dstrect = {associated.box.x, associated.box.y, associated.box.w, associated.box.h};
+    SDL_Rect dsrect;
+    dsrect.x = associated.box.x;
+    dsrect.y = associated.box.y;
+    dsrect.w = associated.box.w;
+    dsrect.h = associated.box.h;
     
-    SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstrect);
+    SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dsrect);
 }
 
 int Sprite::GetWeidth(){

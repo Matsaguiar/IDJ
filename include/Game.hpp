@@ -7,6 +7,7 @@
 #include "State.hpp"
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -14,14 +15,14 @@ class Game{
 private:
     Game(string title, int width, int height);
     
-    static Game* instance;
-    SDL_Window* window;
-    SDL_Renderer* renderer;
-    State* state;
+    static Game *instance;
+    SDL_Window *window;
+    SDL_Renderer *renderer;
+    State *state;
 
 public:
     ~Game();
-    void run();
+    void Run();
     SDL_Renderer *GetRenderer();
     State &GetState();
     static Game &GetInstance();

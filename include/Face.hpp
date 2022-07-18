@@ -2,6 +2,7 @@
 #define FACE_HPP
 
 #include <iostream>
+#include <string>
 #include "GameObject.hpp"
 #include "Sound.hpp"
 
