@@ -3,16 +3,19 @@
 
 #define INCLUDE_SDL
 #include "SDL_include.h"
+
 #include "Sprite.hpp"
 #include "Sound.hpp"
 #include "Music.hpp"
+#include "GameObject.hpp"
+#include "Face.hpp"
+
+
 #include <iostream>
 #include <vector>
 #include <memory>
 #include <math.h>
 #include <string>
-#include "GameObject.hpp"
-#include "Face.hpp"
 
 using namespace std;
 
