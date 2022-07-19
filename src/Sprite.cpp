@@ -19,15 +19,13 @@ bool Sprite::Is(string type) {
 }
 
 Sprite::~Sprite(){
-    if(texture != nullptr)
-        SDL_DestroyTexture(texture);
 }
 
 void Sprite::Open(string file){
     if(IsOpen())
         texture = nullptr;
     
-    texture = IMG_LoadTexture(Game::GetInstance().GetRenderer(), file.c_str());
+    texture = Resources::GetImage(file);
     if(texture == nullptr)
         cout << "Erro TEXTURE: " << SDL_GetError() << endl;
     
@@ -45,16 +43,20 @@ void Sprite::SetClip(int x, int y, int w, int h){
 }
 
 void Sprite::Render(){
+    Render(associated.box.x, associated.box.y);
+}
+
+void Sprite::Render(float x, float y){
     SDL_Rect dsrect;
-    dsrect.x = associated.box.x;
-    dsrect.y = associated.box.y;
-    dsrect.w = associated.box.w;
-    dsrect.h = associated.box.h;
+    dsrect.x = x;
+    dsrect.y = y;
+    dsrect.w = clipRect.w;
+    dsrect.h = clipRect.h;
     
     SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dsrect);
 }
 
-int Sprite::GetWeidth(){
+int Sprite::GetWidth(){
     return width;
 }
 

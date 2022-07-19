@@ -9,7 +9,8 @@
 #include "Music.hpp"
 #include "GameObject.hpp"
 #include "Face.hpp"
-
+#include "TileMap.hpp"
+#include "TileSet.hpp"
 
 #include <iostream>
 #include <vector>
