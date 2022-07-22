@@ -111,17 +111,17 @@ dep/TileMap.d bin/TileMap.o: src/TileMap.cpp include/TileMap.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc \
  C:/TDM-GCC-32/include/string.h \
- C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector \
- C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h \
- C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h \
- C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_bvector.h \
- C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/vector.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++io.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/fstream.tcc \
  include/Component.hpp include/GameObject.hpp \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_bvector.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/vector.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/memory \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_tempbuf.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_raw_storage_iter.h \
@@ -369,11 +369,6 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc:
 C:/TDM-GCC-32/include/string.h:
-C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector:
-C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h:
-C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h:
-C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_bvector.h:
-C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/vector.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h:
@@ -381,6 +376,11 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++io.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/fstream.tcc:
 include/Component.hpp:
 include/GameObject.hpp:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_bvector.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/vector.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/memory:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_tempbuf.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_raw_storage_iter.h:

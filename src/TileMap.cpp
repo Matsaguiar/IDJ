@@ -1,26 +1,48 @@
 #include "TileMap.hpp"
 
-TileMap::TileMap(GameObject &associated, string file, TileSet *tileSet){
+TileMap::TileMap(GameObject &associated, string file, TileSet *tileSet) : Component(associated){
     Load(file);
-    tileSet(tileSet);
+    SetTileSet(tileSet);
 }
 
 void TileMap::Load(string file){
     fstream File;
-    File.open(file, ios::in);
+    File.open(file, std::ifstream::in);
     string line;
-    getLine(File, line);
 
-    vector<string> split = split_string(line, ",");
-    mapWidth = stoi(split[0]);
-    mapHeight = stoi(split[1]);
-    mapDepth = stoi(split[2]);
-
-    while(getLine(File, line)){
-        if(line != ""){
-            split = split_string(line, ",");
-            for(auto i = 0; i != split.end(); i++)
-                tileMatrix.push_back(stoi(split[i])-1);
+    int idx = 0;
+    int mapAttributes = 0;
+    //Primeira linha = tamanhos do mapa
+    getline(File, line);
+    for (unsigned int i = 0; i < line.size(); i++) {
+        if (line.at(i) == ',') {
+            if(mapAttributes == 0)
+                mapWidth = idx;
+            else if(mapAttributes == 1)
+                mapHeight = idx;
+            else if(mapAttributes == 2)
+                mapDepth = idx;
+            idx = 0;
+            mapAttributes++;
+        } else {
+            idx *= 10;
+            idx += line.at(i) - '0';
+        }
+    }
+    //Resto do arquivo.Mapa real
+    int realTile = 0;
+    while (getline(File, line)) {
+        for (unsigned int i = 0; i < line.size(); i++) {
+            if (line.at(i) >= '0' && line.at(i) <= '9') {
+                realTile *= 10;
+                realTile += line.at(i) - '0';
+            } else if (line.at(i) == ',') {
+                //Vetor - 1
+                tileMatrix.push_back(realTile - 1);
+                realTile = 0;
+            } else {
+                realTile = 0;
+            }
         }
     }
     File.close();
@@ -30,7 +52,7 @@ void TileMap::SetTileSet(TileSet *tileSet){
     this->tileSet = tileSet;
 }
 
-int &TileMap::At(int x, int y, int z = 0){
+int &TileMap::At(int x, int y, int z){
     return tileMatrix[x + (mapWidth * y) + (mapHeight * mapWidth * z)];
 }
 
@@ -39,7 +61,7 @@ void TileMap::Render(){
         RenderLayer(i, associated.box.x, associated.box.y);
 }
 
-void TileMap::RenderLayer(int layer, int cameraX = 0, int cameraY = 0){
+void TileMap::RenderLayer(int layer, int cameraX, int cameraY){
     for(int i = 0; i < mapHeight; i++){
         for(int j = 0; j < mapWidth; j++){
             int x = i * tileSet->GetTileWidth();

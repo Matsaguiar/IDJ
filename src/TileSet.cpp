@@ -1,6 +1,6 @@
 #include "TileSet.hpp"
 
-TileSet::TileSet(int tileWidth, int tileHeight, string file) :  tileSet(*(new GameObject()), file){
+TileSet::TileSet(GameObject& associated, int tileWidth, int tileHeight, string file) : tileSet(Sprite(associated, file)){
     this->tileHeight = tileHeight;
     this->tileWidth = tileWidth;
 
@@ -10,8 +10,8 @@ TileSet::TileSet(int tileWidth, int tileHeight, string file) :  tileSet(*(new Ga
     }
 }
 
-void TileSet::RenderTile(unsigned index, float x, float y){
-    if(index >= (unsigned)0 && index <= (unsigned)(rows * columns)-1){
+void TileSet::RenderTile(int index, float x, float y){
+    if (index < columns * rows) {
         int clipX = (index % columns) * tileWidth;
         int clipY = (index / columns) * tileHeight;
         tileSet.SetClip(clipX, clipY, tileWidth, tileHeight);

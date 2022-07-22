@@ -9,10 +9,12 @@
 
 using namespace std;
 
+class Sprite;
+
 class TileSet{
 public: 
-    TileSet(int tileWidth, int tileHeight, string file);
-    void RenderTile(unsigned index, float x, float y);
+    TileSet(GameObject& associated, int tileWidth, int tileHeight, string file);
+    void RenderTile(int index, float x, float y);
     int GetTileWidth();
     int GetTileHeight();
 

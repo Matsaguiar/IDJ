@@ -239,7 +239,14 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp include/Sprite.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
  C:/TDM-GCC-32/include/math.h include/Game.hpp include/State.hpp \
  include/Sprite.hpp include/Sound.hpp C:/SDL2/include/SDL2/SDL_mixer.h \
- include/Music.hpp include/Face.hpp
+ include/Music.hpp include/Face.hpp include/TileMap.hpp \
+ C:/TDM-GCC-32/include/string.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++io.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/fstream.tcc \
+ include/TileSet.hpp
 include/Sprite.hpp:
 include/SDL_include.h:
 C:/SDL2/include/SDL2/SDL.h:
@@ -523,3 +530,11 @@ include/Sound.hpp:
 C:/SDL2/include/SDL2/SDL_mixer.h:
 include/Music.hpp:
 include/Face.hpp:
+include/TileMap.hpp:
+C:/TDM-GCC-32/include/string.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++io.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/fstream.tcc:
+include/TileSet.hpp:
