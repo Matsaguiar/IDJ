@@ -3,7 +3,7 @@
 
 #define INCLUDE_SDL
 #define INCLUDE_SDL_IMAGE
-
+ 
 #include "SDL_include.h"
 #include "Component.hpp"
 #include "Resources.hpp"

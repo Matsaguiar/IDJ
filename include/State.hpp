@@ -1,6 +1,6 @@
 #ifndef STATE_HPP
 #define STATE_HPP
-
+ 
 #define INCLUDE_SDL
 #include "SDL_include.h"
 

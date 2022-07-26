@@ -1,6 +1,6 @@
 #ifndef RECT_HPP
 #define RECT_HPP
-
+ 
 #include "Vec2.hpp"
 #include <string>
 

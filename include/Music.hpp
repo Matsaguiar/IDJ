@@ -1,6 +1,6 @@
 #ifndef MUSIC_HPP
 #define MUSIC_HPP
-
+ 
 #define INCLUDE_SDL
 #define INCLUDE_SDL_MIXER
 

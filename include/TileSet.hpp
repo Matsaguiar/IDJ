@@ -1,7 +1,7 @@
 #ifndef TILESET_HPP
 #define TILESET_HPP
 #define INCLUDE_SDL
-
+ 
 #include <iostream>
 #include <string>
 

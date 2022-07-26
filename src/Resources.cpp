@@ -1,6 +1,6 @@
 #include "Resources.hpp"
 #include "Game.hpp"
-
+ 
 unordered_map<string, SDL_Texture*> Resources::imageTable;
 unordered_map<string, Mix_Music*> Resources::musicTable;
 unordered_map<string, Mix_Chunk*> Resources::soundTable;

@@ -1,5 +1,5 @@
 #include "State.hpp"
-
+ 
 State::State(){
     GameObject *go = new GameObject();
 	

@@ -1,5 +1,5 @@
 #include "Music.hpp"
-
+ 
 Music::Music(){
     music = nullptr;
 }

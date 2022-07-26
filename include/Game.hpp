@@ -1,6 +1,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
-
+ 
 #define INCLUDE_SDL
 
 #include "SDL_include.h"

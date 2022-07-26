@@ -1,5 +1,5 @@
 #include "Face.hpp"
-
+ 
 Face::Face(GameObject& associated) : Component(associated){
     this->hitpoints = 30;
 }

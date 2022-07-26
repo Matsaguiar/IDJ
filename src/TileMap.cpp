@@ -1,6 +1,5 @@
 #include "TileMap.hpp"
 
-
 TileMap::TileMap(GameObject &associated, string file, TileSet *tileSet) : Component(associated){
     Load(file);
     SetTileSet(tileSet);
@@ -93,45 +92,3 @@ bool TileMap::Is(string type) {
         return true;
     return false;
 }
-
-/*
-#include "TileMap.hpp"
-#include <fstream>
-#include <regex>
-vector<string> split_string(string line, string delimiter){
-	regex space("[^"+delimiter+"]+");
-	vector<string> splitted_line;
-	auto line_begin = sregex_iterator(line.begin(),line.end(),space);
-	auto line_end = sregex_iterator();
-	for(sregex_iterator j = line_begin; j != line_end; j++){
-		smatch match = *j;
-		splitted_line.push_back(match.str());
-	}
-	return splitted_line;
-}
-
-TileMap::TileMap(GameObject &associated, string file, TileSet *tileSet) : Component(associated){
-    Load(file);
-    SetTileSet(tileSet);
-}
-
-void TileMap::Load(string file){
-    fstream File;
-    File.open(file,ios::in);
-    string line;
-    getline(File,line);
-    vector<string> splitted_line = split_string(line,",");
-    mapWidth = stoi(splitted_line[0]);
-    mapHeight = stoi(splitted_line[1]);
-    mapDepth = stoi(splitted_line[2]);
-    while(getline(File,line)){
-        if(line != ""){
-            splitted_line = split_string(line,",");
-            for(unsigned i = 0; i < splitted_line.size();i++){
-                tileMatrix.push_back(stoi(splitted_line[i])-1);
-            }
-        }
-    }
-    File.close();
-}
-*/

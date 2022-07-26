@@ -1,5 +1,5 @@
 #include "Game.hpp"
-
+ 
 Game* Game::instance = nullptr;
 
 Game::Game(string title, int width, int height){

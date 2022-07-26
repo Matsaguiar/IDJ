@@ -1,7 +1,7 @@
 #ifndef TILEMAP_HPP
 #define TILEMAP_HPP
 #define INCLUDE_SDL
-
+ 
 #include <iostream>
 #include <string>
 #include <fstream>

@@ -1,6 +1,6 @@
 #ifndef RESOURCES_HPP
 #define RESOURCES_HPP
-
+ 
 #define INCLUDE_SDL
 #define INCLUDE_SDL_IMAGE
 #define INCLUDE_SDL_MIXER

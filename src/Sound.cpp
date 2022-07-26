@@ -1,5 +1,5 @@
 #include "Sound.hpp"
-
+ 
 Sound::Sound(GameObject &associated) : Component(associated){
     chunk = nullptr;
 }

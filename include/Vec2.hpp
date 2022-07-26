@@ -3,7 +3,7 @@
 
 #include <math.h>
 #include <string>
-
+ 
 class Vec2{
 public:
     float x, y;
