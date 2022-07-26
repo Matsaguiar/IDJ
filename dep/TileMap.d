@@ -245,7 +245,13 @@ dep/TileMap.d bin/TileMap.o: src/TileMap.cpp include/TileMap.hpp \
  C:/SDL2/include/SDL2/SDL_image.h C:/SDL2/include/SDL2/SDL.h \
  include/Game.hpp include/State.hpp include/Sound.hpp \
  C:/SDL2/include/SDL2/SDL_mixer.h include/Music.hpp include/Face.hpp \
- include/TileMap.hpp
+ include/TileMap.hpp include/Resources.hpp \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable_policy.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/limits \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/unordered_map.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/erase_if.h
 include/TileMap.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++config.h:
@@ -537,3 +543,10 @@ C:/SDL2/include/SDL2/SDL_mixer.h:
 include/Music.hpp:
 include/Face.hpp:
 include/TileMap.hpp:
+include/Resources.hpp:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable_policy.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/limits:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/unordered_map.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/erase_if.h:

@@ -11,8 +11,6 @@
 
 using namespace std;
 
-class TileSet;
-
 class TileMap : public Component{
 public: 
     TileMap(GameObject &associated, string file, TileSet *tileSet);

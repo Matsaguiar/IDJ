@@ -3,7 +3,7 @@
 #define INCLUDE_SDL
 
 #include <iostream>
-#include <string.h>
+#include <string>
 
 #include "Sprite.hpp"
 
@@ -11,16 +11,15 @@ using namespace std;
 
 class Sprite;
 
-
 class TileSet{
 public: 
-    TileSet(GameObject& associated, int tileWidth, int tileHeight, string file);
+    TileSet(int tileWidth, int tileHeight, string file);
     void RenderTile(int index, float x, float y);
     int GetTileWidth();
     int GetTileHeight();
 
 private:
-    Sprite tileSet;
+    Sprite *tileSet;
     int rows;
     int columns;
     int tileWidth;

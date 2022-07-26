@@ -2,19 +2,22 @@
 
 State::State(){
     GameObject *go = new GameObject();
-	Sprite *sprite = new Sprite(*go, "./recursos/img/ocean.jpg");
-
-    go->AddComponent(sprite);
-
+	
 	GameObject *mapGO = new GameObject();
+	Sprite *sprite = new Sprite(*mapGO, "./recursos/img/ocean.jpg");
+
+    mapGO->AddComponent(sprite);
+
 	mapGO->box.x = 0;
 	mapGO->box.y = 0;
 	objectArray.emplace_back(mapGO);
 
-	TileSet *tileSET = new TileSet(64, 64, ".recursos/img/tileset.png");
-	TileMap *tileMAP = new tileMap(*go, ".recursos/map/tilemap.txt", tileSET);
+	TileSet *tileSET = new TileSet(64, 64, "./recursos/img/tileset.png");
+	TileMap *tileMAP = new TileMap(*go, "./recursos/map/tileMap.txt", tileSET);
 	
 	go->AddComponent(tileMAP);
+	go->box.x = 0;
+	go->box.y = 0;
 	objectArray.emplace_back(go);
 
     Music *music = new Music("./recursos/audio/stageState.ogg");
