@@ -6,7 +6,6 @@
 
 #include "SDL_include.h"
 #include "Component.hpp"
-#include "Game.hpp"
 #include "Resources.hpp"
 #include <iostream>
 #include <string>

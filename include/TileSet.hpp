@@ -9,8 +9,6 @@
 
 using namespace std;
 
-class Sprite;
-
 class TileSet{
 public: 
     TileSet(int tileWidth, int tileHeight, string file);

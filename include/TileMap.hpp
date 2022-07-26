@@ -3,7 +3,7 @@
 #define INCLUDE_SDL
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <fstream>
 
 #include "Component.hpp"
@@ -22,6 +22,9 @@ public:
     int GetWidth();
     int GetHeight();
     int GetDepth();
+
+    void Update(float dt);
+    bool Is(string type);
 
 private:
     vector<int> tileMatrix;

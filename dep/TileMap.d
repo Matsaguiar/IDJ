@@ -110,7 +110,6 @@ dep/TileMap.d bin/TileMap.o: src/TileMap.cpp include/TileMap.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc \
- C:/TDM-GCC-32/include/string.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h \
@@ -243,9 +242,7 @@ dep/TileMap.d bin/TileMap.o: src/TileMap.cpp include/TileMap.hpp \
  C:/SDL2/include/SDL2/SDL_timer.h C:/SDL2/include/SDL2/SDL_version.h \
  C:/SDL2/include/SDL2/SDL_locale.h C:/SDL2/include/SDL2/SDL_misc.h \
  C:/SDL2/include/SDL2/SDL_image.h C:/SDL2/include/SDL2/SDL.h \
- include/Game.hpp include/State.hpp include/Sound.hpp \
- C:/SDL2/include/SDL2/SDL_mixer.h include/Music.hpp include/Face.hpp \
- include/TileMap.hpp include/Resources.hpp \
+ include/Resources.hpp C:/SDL2/include/SDL2/SDL_mixer.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable_policy.h \
@@ -374,7 +371,6 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/basic_ios.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc:
-C:/TDM-GCC-32/include/string.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h:
@@ -536,14 +532,8 @@ C:/SDL2/include/SDL2/SDL_locale.h:
 C:/SDL2/include/SDL2/SDL_misc.h:
 C:/SDL2/include/SDL2/SDL_image.h:
 C:/SDL2/include/SDL2/SDL.h:
-include/Game.hpp:
-include/State.hpp:
-include/Sound.hpp:
-C:/SDL2/include/SDL2/SDL_mixer.h:
-include/Music.hpp:
-include/Face.hpp:
-include/TileMap.hpp:
 include/Resources.hpp:
+C:/SDL2/include/SDL2/SDL_mixer.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable_policy.h:

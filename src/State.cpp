@@ -41,13 +41,8 @@ void State::Update(float dt){
         objectArray[i]->Update(dt);
     }
 	for(unsigned int i = 0; i < objectArray.size(); i++){
-        if(objectArray[i] -> IsDead()){
-			Sound *sound = (Sound *) objectArray[i].get() -> GetComponent("Sound");
-			objectArray[i]->RemoveComponent(objectArray[i]->GetComponent("Sprite"));
-			objectArray[i]->RemoveComponent(objectArray[i]->GetComponent("Face"));
-			if((sound != nullptr && !sound ->IsOpen()) || (sound == nullptr))
-	            objectArray.erase(objectArray.begin()+i);
-        }
+        if(objectArray[i] -> IsDead())
+	        objectArray.erase(objectArray.begin()+i);
     }
 }
 

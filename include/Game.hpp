@@ -10,7 +10,7 @@
 #include <string>
 
 using namespace std;
-class State;
+
 class Game{
 private:
     Game(string title, int width, int height);

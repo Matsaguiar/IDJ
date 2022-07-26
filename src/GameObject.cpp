@@ -33,7 +33,7 @@ void GameObject::AddComponent(Component *cpt){
 
 void GameObject::RemoveComponent(Component *cpt){
     for(unsigned int i = 0; i < this->components.size(); i++){
-        if(this -> components[i].get()  == cpt){
+        if(this->components[i].get()  == cpt){
             components.erase(this->components.begin()+i);
             break;
         }
@@ -41,8 +41,8 @@ void GameObject::RemoveComponent(Component *cpt){
 }
 
 Component *GameObject::GetComponent(string type){
-    for(unsigned int i = 0;i < this -> components.size();i++)
-        if(this -> components[i] -> Is(type))
+    for(unsigned int i = 0;i < this->components.size();i++)
+        if(this->components[i]->Is(type))
             return components[i].get();
     return nullptr;
 }

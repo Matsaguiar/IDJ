@@ -1,5 +1,5 @@
-dep/State.d bin/State.o: src/State.cpp src/../include/State.hpp \
- src/../include/SDL_include.h C:/SDL2/include/SDL2/SDL.h \
+dep/State.d bin/State.o: src/State.cpp include/State.hpp \
+ include/SDL_include.h C:/SDL2/include/SDL2/SDL.h \
  C:/SDL2/include/SDL2/SDL_main.h C:/SDL2/include/SDL2/SDL_stdinc.h \
  C:/SDL2/include/SDL2/SDL_config.h C:/SDL2/include/SDL2/SDL_platform.h \
  C:/SDL2/include/SDL2/begin_code.h C:/SDL2/include/SDL2/close_code.h \
@@ -109,8 +109,8 @@ dep/State.d bin/State.o: src/State.cpp src/../include/State.hpp \
  C:/SDL2/include/SDL2/SDL_shape.h C:/SDL2/include/SDL2/SDL_system.h \
  C:/SDL2/include/SDL2/SDL_timer.h C:/SDL2/include/SDL2/SDL_version.h \
  C:/SDL2/include/SDL2/SDL_locale.h C:/SDL2/include/SDL2/SDL_misc.h \
- src/../include/Sprite.hpp C:/SDL2/include/SDL2/SDL_image.h \
- C:/SDL2/include/SDL2/SDL.h src/../include/Component.hpp \
+ include/Sprite.hpp C:/SDL2/include/SDL2/SDL_image.h \
+ C:/SDL2/include/SDL2/SDL.h include/Component.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios \
@@ -207,7 +207,7 @@ dep/State.d bin/State.o: src/State.cpp src/../include/State.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc \
- src/../include/GameObject.hpp \
+ include/GameObject.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h \
@@ -234,11 +234,10 @@ dep/State.d bin/State.o: src/State.cpp src/../include/State.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/atomic_base.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/atomic_lockfree_defines.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/backward/auto_ptr.h \
- src/../include/Rect.hpp src/../include/Vec2.hpp \
+ include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h src/../include/Game.hpp \
- src/../include/State.hpp src/../include/Resources.hpp \
+ C:/TDM-GCC-32/include/math.h include/Resources.hpp \
  C:/SDL2/include/SDL2/SDL_mixer.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h \
@@ -246,17 +245,15 @@ dep/State.d bin/State.o: src/State.cpp src/../include/State.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/limits \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/unordered_map.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/erase_if.h \
- src/../include/Sound.hpp src/../include/Music.hpp \
- src/../include/Face.hpp src/../include/TileMap.hpp \
- C:/TDM-GCC-32/include/string.h \
+ include/Sound.hpp include/Music.hpp include/Face.hpp include/TileMap.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++io.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/fstream.tcc \
- src/../include/TileSet.hpp
-src/../include/State.hpp:
-src/../include/SDL_include.h:
+ include/TileSet.hpp
+include/State.hpp:
+include/SDL_include.h:
 C:/SDL2/include/SDL2/SDL.h:
 C:/SDL2/include/SDL2/SDL_main.h:
 C:/SDL2/include/SDL2/SDL_stdinc.h:
@@ -395,10 +392,10 @@ C:/SDL2/include/SDL2/SDL_timer.h:
 C:/SDL2/include/SDL2/SDL_version.h:
 C:/SDL2/include/SDL2/SDL_locale.h:
 C:/SDL2/include/SDL2/SDL_misc.h:
-src/../include/Sprite.hpp:
+include/Sprite.hpp:
 C:/SDL2/include/SDL2/SDL_image.h:
 C:/SDL2/include/SDL2/SDL.h:
-src/../include/Component.hpp:
+include/Component.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios:
@@ -500,7 +497,7 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/basic_ios.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/ostream.tcc:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/istream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/istream.tcc:
-src/../include/GameObject.hpp:
+include/GameObject.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_uninitialized.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_vector.h:
@@ -527,14 +524,12 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/shared_ptr_atomic.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/atomic_base.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/atomic_lockfree_defines.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/backward/auto_ptr.h:
-src/../include/Rect.hpp:
-src/../include/Vec2.hpp:
+include/Rect.hpp:
+include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
-src/../include/Game.hpp:
-src/../include/State.hpp:
-src/../include/Resources.hpp:
+include/Resources.hpp:
 C:/SDL2/include/SDL2/SDL_mixer.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h:
@@ -542,14 +537,13 @@ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable_policy.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/limits:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/unordered_map.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/erase_if.h:
-src/../include/Sound.hpp:
-src/../include/Music.hpp:
-src/../include/Face.hpp:
-src/../include/TileMap.hpp:
-C:/TDM-GCC-32/include/string.h:
+include/Sound.hpp:
+include/Music.hpp:
+include/Face.hpp:
+include/TileMap.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/fstream:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/codecvt.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/basic_file.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++io.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/fstream.tcc:
-src/../include/TileSet.hpp:
+include/TileSet.hpp:
