@@ -214,7 +214,9 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp include/Sprite.hpp \
  include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h include/Resources.hpp \
+ C:/TDM-GCC-32/include/math.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime \
+ C:/TDM-GCC-32/include/time.h include/Resources.hpp \
  C:/SDL2/include/SDL2/SDL_mixer.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/hashtable.h \
@@ -506,6 +508,8 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime:
+C:/TDM-GCC-32/include/time.h:
 include/Resources.hpp:
 C:/SDL2/include/SDL2/SDL_mixer.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/unordered_map:

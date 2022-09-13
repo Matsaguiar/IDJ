@@ -15,9 +15,10 @@ public:
     Vec2 operator+(Vec2 v);
     Vec2 operator-(Vec2 v);
     Vec2 operator*(float escalar);
+    friend Vec2 operator*(float escalar, Vec2 &v);
     float magnitude();
     Vec2 Normal();
-    float distancia(Vec2 v);
+    float distancia(Vec2 &v);
     float inclinacaoX();
     float inclinacao(Vec2 &v);
     Vec2 Rotacao(float angulacao);

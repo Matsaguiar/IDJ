@@ -221,7 +221,9 @@ dep/Resources.d bin/Resources.o: src/Resources.cpp include/Resources.hpp \
  include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h include/Resources.hpp include/Sound.hpp \
+ C:/TDM-GCC-32/include/math.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime \
+ C:/TDM-GCC-32/include/time.h include/Resources.hpp include/Sound.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ostream \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ios \
@@ -515,6 +517,8 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime:
+C:/TDM-GCC-32/include/time.h:
 include/Resources.hpp:
 include/Sound.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:

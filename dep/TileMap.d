@@ -144,7 +144,9 @@ dep/TileMap.d bin/TileMap.o: src/TileMap.cpp include/TileMap.hpp \
  include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h include/TileSet.hpp \
+ C:/TDM-GCC-32/include/math.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime \
+ C:/TDM-GCC-32/include/time.h include/TileSet.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream \
  include/Sprite.hpp include/SDL_include.h C:/SDL2/include/SDL2/SDL.h \
  C:/SDL2/include/SDL2/SDL_main.h C:/SDL2/include/SDL2/SDL_stdinc.h \
@@ -408,6 +410,8 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime:
+C:/TDM-GCC-32/include/time.h:
 include/TileSet.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/iostream:
 include/Sprite.hpp:

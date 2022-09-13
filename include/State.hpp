@@ -26,7 +26,7 @@ public:
     ~State();
 
 private:
-    Music music;
+    Music *music;
     bool quitRequested;
 
     void Input();

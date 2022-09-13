@@ -5,18 +5,18 @@ GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
-    for (int i = this -> components.size()-1; i >= 0; i--)
+    for (int i = this->components.size()-1; i >= 0; i--)
         components.erase(components.begin() + i);
     this->components.clear();
 }
 
 void GameObject::Update(float dt){
-    for(unsigned int i = 0; i < components.size(); i++)
+    for(unsigned int i = 0; i < this->components.size(); i++)
         components[i]->Update(dt);
 }
 
 void GameObject::Render(){
-    for(unsigned int i = 0; i < components.size(); i++)
+    for(unsigned int i = 0; i < this->components.size(); i++)
         components[i]->Render();
 }
 

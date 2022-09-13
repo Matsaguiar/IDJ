@@ -9,10 +9,10 @@ Sound::Sound(GameObject &associated, string file) : Sound(associated) {
 }
 
 Sound::~Sound(){
-    Stop();
-    if (chunk != nullptr) {
-        Mix_FreeChunk(chunk);
-    }
+    // Stop();
+    // if (chunk != nullptr) {
+    //     Mix_FreeChunk(chunk);
+    // }
 }
 
 void Sound::Play(int times){

@@ -117,7 +117,9 @@ dep/Component.d bin/Component.o: src/Component.cpp include/Component.hpp \
  include/Component.hpp include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h
+ C:/TDM-GCC-32/include/math.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime \
+ C:/TDM-GCC-32/include/time.h
 include/Component.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/string:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++config.h:
@@ -250,3 +252,5 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime:
+C:/TDM-GCC-32/include/time.h:

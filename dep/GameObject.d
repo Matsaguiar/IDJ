@@ -117,7 +117,9 @@ dep/GameObject.d bin/GameObject.o: src/GameObject.cpp \
  include/GameObject.hpp include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
- C:/TDM-GCC-32/include/math.h
+ C:/TDM-GCC-32/include/math.h \
+ C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime \
+ C:/TDM-GCC-32/include/time.h
 include/GameObject.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/vector:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stl_algobase.h:
@@ -250,3 +252,5 @@ include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/include/math.h:
+C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/ctime:
+C:/TDM-GCC-32/include/time.h:

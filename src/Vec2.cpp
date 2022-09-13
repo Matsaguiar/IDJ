@@ -21,7 +21,7 @@ Vec2 Vec2::operator*(float escalar){
 }
 
 float Vec2::magnitude(){ 
-    return sqrtf((this->x * x) + (this->y * y));
+    return sqrt(pow(this -> x,2) + pow(this -> y,2));
 }
 
 Vec2 Vec2::Normal(){ 
@@ -29,22 +29,30 @@ Vec2 Vec2::Normal(){
     return Vec2(this->x / magnitude, this->y / magnitude);
 }
 
-float Vec2::distancia(Vec2 v){ 
-    Vec2 v2 = this->operator-(v);
-    return v2.magnitude();
+float Vec2::distancia(Vec2 &v){ 
+    return (*this-v).magnitude();
 }   
 
 float Vec2::inclinacaoX(){ 
-    return atan2(this->x, this->y);
+    return atan2(this->y, this->x);
 }
 
 float Vec2::inclinacao(Vec2 &v){
-    Vec2 v2 = this->operator-(v); 
+    Vec2 v2 = (*this - v); 
     return atan2(v2.y, v2.x);
 }
 
 Vec2 Vec2::Rotacao(float angulacao){ 
-    return Vec2((this->x * cos(angulacao)) - (this->y * sin(angulacao)), (this->y * cos(angulacao)) + (this->x * sin(angulacao)));
+    Vec2 v2;
+    float cosx = cos(angulacao);
+    float sinx = sin(angulacao);
+    v2.x = (this -> x * cosx) - (this -> y * sinx);
+    v2.y = (this -> y * cosx) + (this -> x * sinx);
+    return v2;
+}
+
+Vec2 operator*(float escalar, Vec2 &v){
+   return Vec2(v.x*escalar,v.y*escalar);
 }
 /*
 Vec2& Vec2::operator+(Vec2& v){ 

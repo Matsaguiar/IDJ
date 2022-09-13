@@ -5,6 +5,8 @@
 #include <memory>
 #include "Component.hpp"
 #include "Rect.hpp"
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
