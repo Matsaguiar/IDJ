@@ -1,15 +1,11 @@
 #ifndef TILEMAP_HPP
 #define TILEMAP_HPP
 #define INCLUDE_SDL
- 
-#include <iostream>
-#include <string>
+
 #include <fstream>
 
 #include "Component.hpp"
 #include "TileSet.hpp"
-
-using namespace std;
 
 class TileMap : public Component{
 public: 

@@ -23,17 +23,18 @@ Sprite::~Sprite(){
 }
 
 void Sprite::Open(string file){
-    if(IsOpen())
+    if(IsOpen()){
         texture = nullptr;
-    
-    texture = Resources::GetImage(file);
-    if(texture == nullptr)
-        cout << "Erro TEXTURE: " << SDL_GetError() << endl;
-    
-    SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
-    SetClip(0, 0, width, height);
-    associated.box.h = height;
-    associated.box.w = width;
+    }else{
+        texture = Resources::GetImage(file);
+        if(texture == nullptr)
+            cout << "Erro TEXTURE: " << SDL_GetError() << endl;
+        
+        SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
+        SetClip(0, 0, width, height);
+        associated.box.h = height;
+        associated.box.w = width;
+    }
 }
 
 void Sprite::SetClip(int x, int y, int w, int h){
@@ -54,7 +55,11 @@ void Sprite::Render(float x, float y){
     dsrect.w = clipRect.w;
     dsrect.h = clipRect.h;
     
-    SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dsrect);
+    if(IsOpen()){
+        if(SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dsrect) != 0){
+            cout << SDL_GetError() << endl;
+        }
+    }
 }
 
 int Sprite::GetWidth(){

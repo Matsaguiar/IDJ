@@ -13,7 +13,7 @@ TileSet::TileSet(int tileWidth,int tileHeight, string file){
 }
 
 void TileSet::RenderTile(int index, float x, float y){
-    if (index < columns * rows) {
+    if (index <= columns * rows) {
         int clipX = (index % columns) * tileWidth;
         int clipY = (index / columns) * tileHeight;
         tileSet->SetClip(clipX, clipY, tileWidth, tileHeight);

@@ -2,7 +2,6 @@
 #define VEC2_HPP
 
 #include <math.h>
-#include <string>
  
 class Vec2{
 public:

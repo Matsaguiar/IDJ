@@ -38,7 +38,7 @@ void State::LoadAssets(){
 void State::Update(float dt){
     Input();
     for(unsigned int i = 0; i < objectArray.size(); i++){
-        objectArray[i]->Update(dt);
+        objectArray[i].get()->Update(dt);
     }
 	for(unsigned int i = 0; i < objectArray.size(); i++){
         if(objectArray[i] -> IsDead())
@@ -48,7 +48,7 @@ void State::Update(float dt){
 
 void State::Render(){
     for(unsigned int i = 0; i < objectArray.size(); i++)
-        objectArray[i]->Render();
+        objectArray[i].get()->Render();
 }
 
 State::~State(){

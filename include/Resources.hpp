@@ -6,8 +6,6 @@
 #define INCLUDE_SDL_MIXER
 #include "SDL_include.h"
 #include <unordered_map>
-
-#include <iostream>
 #include <string>
 
 using namespace std;

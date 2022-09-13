@@ -1,10 +1,8 @@
 #ifndef GAMEOBJECT_HPP
 #define GAMEOBJECT_HPP
- 
-#include <iostream>
+
 #include <vector>
 #include <memory>
-#include <string>
 #include "Component.hpp"
 #include "Rect.hpp"
 

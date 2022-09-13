@@ -3,7 +3,6 @@
 #define INCLUDE_SDL
  
 #include <iostream>
-#include <string>
 
 #include "Sprite.hpp"
 

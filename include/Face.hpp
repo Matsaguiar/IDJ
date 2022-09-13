@@ -1,12 +1,8 @@
 #ifndef FACE_HPP
 #define FACE_HPP
  
-#include <iostream>
-#include <string>
 #include "GameObject.hpp"
 #include "Sound.hpp"
-
-using namespace std;
 
 class Face : public Component{
 public:

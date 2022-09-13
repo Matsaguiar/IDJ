@@ -6,18 +6,19 @@ Game::Game(string title, int width, int height){
     if(instance == nullptr){
         instance = this;
         
-        if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER))
+        if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0)
             cout << "Erro SDL_Init: " << SDL_GetError() << endl;
         
-        if(!IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF))
+        if(IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0)
             cout << "Erro IMG_Init: " << SDL_GetError() << endl;
         
         //MIX_INIT_OGG, MIX_INIT_FLUIDSYNTH, MIX_INIT_MP3, MIX_INIT_MOD, MIX_INIT_MODPLUG
-        if(!Mix_Init(MIX_INIT_OGG))
+        if(Mix_Init(MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG | MIX_INIT_MOD) == 0)
             cout << "Erro MIX_Init: " << SDL_GetError() << endl;
         
-        if(Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024))
+        if(Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) != 0)
             cout << "Erro MIX_Open: " << SDL_GetError() << endl;
+
         Mix_AllocateChannels(32);
 
         //SDL_Window* SDL_CreateWindow(const char* title, int x, int y, int w, int h, Uint32 flags=0)
@@ -35,8 +36,8 @@ Game::Game(string title, int width, int height){
 }
 
 Game::~Game(){
-    SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
     Mix_CloseAudio();
     Mix_Quit();
     IMG_Quit();

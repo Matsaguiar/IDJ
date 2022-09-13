@@ -64,10 +64,10 @@ void TileMap::Render(){
 void TileMap::RenderLayer(int layer, int cameraX, int cameraY){
     for(int i = 0; i < mapHeight; i++){
         for(int j = 0; j < mapWidth; j++){
-            int x = i * tileSet->GetTileWidth();
-            int y = j * tileSet->GetTileHeight();
+            int x = j * tileSet->GetTileWidth();
+            int y = i * tileSet->GetTileHeight();
 
-            tileSet->RenderTile(At(i, j, layer), x, y);
+            tileSet->RenderTile(At(j, i, layer), x, y);
         }
     }
 }

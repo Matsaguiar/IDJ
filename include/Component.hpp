@@ -1,7 +1,6 @@
 #ifndef COMPONENT_HPP
 #define COMPONENT_HPP
 
-#include <iostream>
 #include <string>
 #include "GameObject.hpp"
  

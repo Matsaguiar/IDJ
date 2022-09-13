@@ -10,11 +10,8 @@
 #include "Face.hpp"
 #include "TileMap.hpp"
 
-#include <iostream>
-#include <vector>
 #include <memory>
 #include <math.h>
-#include <string>
 
 using namespace std;
 

@@ -1,7 +1,7 @@
 #include "Music.hpp"
  
 Music::Music(){
-    music = nullptr;
+    //music = nullptr;
 }
 
 Music::Music(string file){
@@ -14,10 +14,10 @@ Music::~Music(){
 }
 
 void Music::Play(int times){
-    if(music != nullptr)
+    // if(music != nullptr)
         Mix_PlayMusic(music, times);
-    else
-        cout << "Erro SDL_Music: " << SDL_GetError() << endl;
+    //else
+    //    cout << "Erro SDL_Music: " << SDL_GetError() << endl;
 }
 
 void Music::Stop(int msToStop){
@@ -25,9 +25,7 @@ void Music::Stop(int msToStop){
 }
 
 void Music::Open(string file){
-    music = Mix_LoadMUS(file.c_str());
-    if(music == nullptr)
-        cout << "Erro SDL_Music_Open: " << SDL_GetError() << endl;
+    music = Resources::GetMusic(file);
 }
 
 bool Music::IsOpen(){

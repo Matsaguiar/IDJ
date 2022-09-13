@@ -7,24 +7,25 @@ GameObject::GameObject(){
 GameObject::~GameObject(){
     for (int i = this -> components.size()-1; i >= 0; i--)
         components.erase(components.begin() + i);
+    this->components.clear();
 }
 
 void GameObject::Update(float dt){
-    for(auto i = components.begin(); i != components.end(); i++)
-        (*i)-> Update(dt);
+    for(unsigned int i = 0; i < components.size(); i++)
+        components[i]->Update(dt);
 }
 
 void GameObject::Render(){
-    for(auto i = components.begin(); i != components.end(); i++)
-        (*i)-> Render();
+    for(unsigned int i = 0; i < components.size(); i++)
+        components[i]->Render();
 }
 
 bool GameObject::IsDead(){
-    return isDead;
+    return this->isDead;
 }
 
 void GameObject::RequestDelete(){
-    isDead = true;
+    this->isDead = true;
 }
 
 void GameObject::AddComponent(Component *cpt){
@@ -33,7 +34,7 @@ void GameObject::AddComponent(Component *cpt){
 
 void GameObject::RemoveComponent(Component *cpt){
     for(unsigned int i = 0; i < this->components.size(); i++){
-        if(this->components[i].get()  == cpt){
+        if(cpt == this->components[i].get()){
             components.erase(this->components.begin()+i);
             break;
         }
@@ -41,7 +42,7 @@ void GameObject::RemoveComponent(Component *cpt){
 }
 
 Component *GameObject::GetComponent(string type){
-    for(unsigned int i = 0;i < this->components.size();i++)
+    for(unsigned int i = 0; i < this->components.size(); i++)
         if(this->components[i]->Is(type))
             return components[i].get();
     return nullptr;
