@@ -1,13 +1,11 @@
 #ifndef SOUND_HPP
 #define SOUND_HPP
- 
-#define INCLUDE_SDL
-#define INCLUDE_SDL_MIXER
+
 #include "SDL_include.h"
-#include <iostream>
+
 #include "Component.hpp"
 #include "GameObject.hpp"
-#include "Resources.hpp"
+#include <string>
 
 using namespace std;
 

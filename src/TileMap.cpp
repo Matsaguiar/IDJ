@@ -1,8 +1,8 @@
-#include "TileMap.hpp"
+#include "../include/TileMap.hpp"
 
 TileMap::TileMap(GameObject &associated, string file, TileSet *tileSet) : Component(associated){
     Load(file);
-    SetTileSet(tileSet);
+    this -> tileSet = tileSet;
 }
 
 void TileMap::Load(string file){
@@ -48,27 +48,27 @@ void TileMap::Load(string file){
     File.close();
 }
 
-void TileMap::SetTileSet(TileSet *tileSet){
-    this->tileSet = tileSet;
+void TileMap::SetTileSet(TileSet* tileSet){
+    this -> tileSet = tileSet;
 }
 
-int &TileMap::At(int x, int y, int z){
-    return tileMatrix.at(x + (mapWidth * y) + (mapHeight * mapWidth * z));
-}
-
-void TileMap::Render(){
-    for(int i = 0; i < mapDepth; i++)
-        RenderLayer(i, associated.box.x, associated.box.y);
+int& TileMap::At(int x, int y, int z){
+    return tileMatrix.at( x + (y*mapWidth) + (z*mapWidth*mapHeight));
 }
 
 void TileMap::RenderLayer(int layer, int cameraX, int cameraY){
-    for(int i = 0; i < mapHeight; i++){
-        for(int j = 0; j < mapWidth; j++){
-            int x = j * tileSet->GetTileWidth();
-            int y = i * tileSet->GetTileHeight();
-
-            tileSet->RenderTile(At(j, i, layer), x, y);
+    for(int i = 0; i < mapWidth; i++){
+        for(int j = 0; j < mapHeight; j++){
+            int x = i * tileSet -> GetTileWidth()-cameraX;
+            int y = j * tileSet -> GetTileHeight()-cameraY;
+            tileSet -> RenderTile((At(i,j,layer)),x,y);
         }
+    }
+}
+
+void TileMap::Render(){
+    for(int i = 0; i < mapDepth; i++){
+        RenderLayer(i, Camera::pos.x*(1+(i*0.50)) , Camera::pos.y*(1+(i*0.50)));
     }
 }
 
@@ -81,14 +81,13 @@ int TileMap::GetHeight(){
 }
 
 int TileMap::GetDepth(){
-    return mapDepth;
+    return mapDepth;   
 }
 
-void TileMap::Update(float dt)  {
-
+bool TileMap::Is(string type){
+    return type == "TileMap";
 }
-bool TileMap::Is(string type) {
-    if(type == "TileMap")
-        return true;
-    return false;
+
+void TileMap::Update(float dt){
+
 }

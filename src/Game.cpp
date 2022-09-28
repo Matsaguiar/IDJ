@@ -1,5 +1,5 @@
-#include "Game.hpp"
- 
+#include "../include/Game.hpp"
+
 Game* Game::instance = nullptr;
 
 Game::Game(string title, int width, int height){
@@ -28,7 +28,10 @@ Game::Game(string title, int width, int height){
 
         if(window == nullptr || renderer == nullptr)
             cout << "Erro window or render" << SDL_GetError() << endl;
-
+        
+        frameStart = 0;
+        dt = 0;
+        srand(time(NULL));
         state = new State();
 
     }else
@@ -45,12 +48,17 @@ Game::~Game(){
 }
 
 void Game::Run(){
-    while(!GetState().QuitRequested()){
-        GetState().Update(0);
-        GetState().Render();
+    while(state->QuitRequested() == false){
+        CalculaDeltaTime();
+        InputManager::GetInstance().Update();
+        state->Update(dt);
+        state->Render();
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
     }
+    Resources::ClearImages();
+    Resources::ClearSounds();
+    Resources::ClearMusics();
 }
 
 SDL_Renderer *Game::GetRenderer(){
@@ -67,4 +75,14 @@ Game &Game::GetInstance(){
     
     return *new Game("Matheus Arruda Aguiar - 180127659", 1024, 600);
 
+}
+
+void Game::CalculaDeltaTime() {
+    int lastFrame = frameStart;
+    frameStart = SDL_GetTicks ();
+    dt = (frameStart - lastFrame)/1000.0;
+}
+
+float Game::GetDeltaTime() {
+    return dt;
 }

@@ -1,26 +1,29 @@
-#include "State.hpp"
+#include "../include/State.hpp"
  
 State::State(){
-    GameObject *go = new GameObject();
+    GameObject* go = new GameObject();
 	
-	GameObject *mapGO = new GameObject();
-	Sprite *sprite = new Sprite(*mapGO, "./recursos/img/ocean.jpg");
+	GameObject* mapGO = new GameObject();
+	Sprite* sprite = new Sprite(*mapGO, "./recursos/img/ocean.jpg");
 
     mapGO->AddComponent(sprite);
 
-	mapGO->box.x = 0;
-	mapGO->box.y = 0;
+	CameraFollower* cf = new CameraFollower(*mapGO);
+	mapGO->AddComponent(cf);
+
+	mapGO->box.x = Camera::pos.x;
+	mapGO->box.y = Camera::pos.y;
 	objectArray.emplace_back(mapGO);
 
-	TileSet *tileSET = new TileSet(64, 64, "./recursos/img/tileset.png");
-	TileMap *tileMAP = new TileMap(*go, "./recursos/map/tileMap.txt", tileSET);
+	TileSet* tileSET = new TileSet(64, 64, "./recursos/img/tileset.png");
+	TileMap* tileMAP = new TileMap(*go, "./recursos/map/tileMap.txt", tileSET);
 	
 	go->AddComponent(tileMAP);
 	go->box.x = 0;
 	go->box.y = 0;
 	objectArray.emplace_back(go);
 
-    Music *music = new Music("./recursos/audio/stageState.ogg");
+    music = new Music("./recursos/audio/stageState.ogg");
     
     LoadAssets();
     music->Play();
@@ -36,26 +39,39 @@ void State::LoadAssets(){
 }
 
 void State::Update(float dt){
-    Input();
+    InputManager inputManager = InputManager::GetInstance();
+
+	if(inputManager.KeyPress(ESCAPE_KEY) || inputManager.QuitRequested())
+		quitRequested = true;
+
+	if(inputManager.KeyPress(SPACE_KEY)){
+		Vec2 objPos = Vec2(200, 0).Rotacao(-M_PI + M_PI*(rand() % 1001)/500.0 ) + Vec2(inputManager.GetMouseX(), inputManager.GetMouseY());
+		AddObject((int)objPos.x , (int)objPos.y);
+	}
+
+	Camera::Update(dt);
     for(unsigned int i = 0; i < objectArray.size(); i++){
-        objectArray[i].get()->Update(dt);
+        objectArray[i].get() -> Update(dt);
     }
-	for(unsigned int i = 0; i < objectArray.size(); i++){
-        if(objectArray[i] -> IsDead())
-	        objectArray.erase(objectArray.begin()+i);
+
+    for(unsigned int i = 0; i < objectArray.size(); i++){
+        if (objectArray[i]->IsDead()){
+			objectArray.erase(objectArray.begin()+i);
+        }
     }
 }
 
 void State::Render(){
-    for(unsigned int i = 0; i < objectArray.size(); i++)
-        objectArray[i].get()->Render();
+   	for(unsigned int i = 0; i < objectArray.size(); i++){
+		objectArray[i].get() -> Render();
+	}
 }
 
 State::~State(){
     objectArray.clear();
 }
 
-void State::Input(){
+/*void State::Input(){
     SDL_Event event;
 	int mouseX, mouseY;
 
@@ -106,16 +122,16 @@ void State::Input(){
 			}
 		}
 	}
-}
+}*/
 
 void State::AddObject(int mouseX, int mouseY){
     GameObject *go = new GameObject();
     
     Sprite *sprite = new Sprite(*go, "./recursos/img/penguinface.png");
-    go->AddComponent(sprite);
+    go -> AddComponent(sprite);
 
-    go->box.x = mouseX - go->box.GetCoordenadasCentro().x;
-    go->box.y = mouseY - go->box.GetCoordenadasCentro().y;
+    go -> box.x = mouseX - go->box.w/2 + Camera::pos.x;
+	go -> box.y = mouseY - go->box.h/2 + Camera::pos.y;
 
     Sound *sound = new Sound(*go, "./recursos/audio/boom.wav");
     go->AddComponent(sound);

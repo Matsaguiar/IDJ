@@ -1,43 +1,45 @@
-#include "Sound.hpp"
+#include "../include/Sound.hpp"
  
-Sound::Sound(GameObject &associated) : Component(associated){
-    this->chunk = nullptr;
+Sound::Sound(GameObject& associated) : Component(associated){
+    this -> chunk = nullptr;
 }
 
-Sound::Sound(GameObject &associated, string file) : Sound(associated) {
+Sound::Sound(GameObject& associated, string file) : Sound(associated){
     Open(file);
 }
 
 Sound::~Sound(){
-    // Stop();
-    // if (chunk != nullptr) {
-    //     Mix_FreeChunk(chunk);
-    // }
+    Stop();
+    if(this -> chunk != nullptr){
+        Mix_HaltChannel(0);
+        Mix_FreeChunk(chunk);
+    }
 }
 
 void Sound::Play(int times){
-    this->channel = Mix_PlayChannel(-1, this->chunk, times);
-    if(this->channel == -1)
-        cout << "Erro Mix_PlayChannel " << SDL_GetError() << endl;
-
+    this -> channel = Mix_PlayChannel(-1, this -> chunk, times);
+    if(this -> channel == -1){
+        printf("Sound Channel fail\n");
+    }
 }
 
 void Sound::Stop(){
-    if(chunk != nullptr)
-        Mix_HaltChannel(this->channel);
-    
+    if(chunk != nullptr){
+        Mix_HaltChannel(this -> channel);
+    }
 }
 
 void Sound::Open(string file){
-    this->chunk = Resources::GetSound(file);
-    if(this->chunk == nullptr)
-        cout << "Erro Mix_LoadWAV: " << SDL_GetError() << endl;
-       
+    this -> chunk = Mix_LoadWAV(file.c_str());
+    if(this -> chunk == nullptr){
+        printf("Sound Open fail\n");
+    }
 }
 
 bool Sound::IsOpen(){
-    if(Mix_Playing(this->channel))
+    if(Mix_Playing(this -> channel)){
         return true;
+    }
     return false;
 }
 
@@ -50,7 +52,5 @@ void Sound::Render(){
 }
 
 bool Sound::Is(string type){
-    if(type == "Sound")
-        return true;
-    return false;
+    return type == "Sound";
 }

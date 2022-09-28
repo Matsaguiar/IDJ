@@ -1,6 +1,7 @@
 #ifndef VEC2_HPP
 #define VEC2_HPP
 
+#include "SDL_include.h"
 #include <math.h>
  
 class Vec2{
@@ -15,12 +16,13 @@ public:
     Vec2 operator+(Vec2 v);
     Vec2 operator-(Vec2 v);
     Vec2 operator*(float escalar);
-    friend Vec2 operator*(float escalar, Vec2 &v);
+    Vec2 operator+= (Vec2 v);
+
     float magnitude();
     Vec2 Normal();
-    float distancia(Vec2 &v);
-    float inclinacaoX();
-    float inclinacao(Vec2 &v);
+//    float distancia(Vec2 &v);
+//    float inclinacaoX();
+//    float inclinacao(Vec2 &v);
     Vec2 Rotacao(float angulacao);
 
     //Operadores de atribuicao

@@ -6,7 +6,6 @@
 
 #include <string>
 #include "SDL_include.h"
-#include "Resources.hpp"
 
 using namespace std;
 

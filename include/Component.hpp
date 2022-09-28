@@ -1,7 +1,11 @@
 #ifndef COMPONENT_HPP
 #define COMPONENT_HPP
 
+#define INCLUDE_SDL_MIXER
+
+#include "SDL_include.h"
 #include <string>
+
 #include "GameObject.hpp"
  
 using namespace std;
@@ -17,7 +21,7 @@ public:
     bool virtual Is(string type) = 0;
 
 protected:
-    GameObject &associated;
+    GameObject& associated;
 
 };
 

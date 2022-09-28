@@ -4,14 +4,19 @@
 #define INCLUDE_SDL
 #include "SDL_include.h"
 
-#include "Sprite.hpp"
-#include "Sound.hpp"
-#include "Music.hpp"
-#include "Face.hpp"
-#include "TileMap.hpp"
-
+#include "SDL_include.h"
+#include "Bits/stdc++.h"
 #include <memory>
 #include <math.h>
+
+#include "GameObject.hpp"
+#include "Sprite.hpp"
+#include "Music.hpp"
+#include "Face.hpp"
+#include "Rect.hpp"
+#include "Vec2.hpp"
+#include "TileMap.hpp"
+#include "CameraFollower.hpp"
 
 using namespace std;
 

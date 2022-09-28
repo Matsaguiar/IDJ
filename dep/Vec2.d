@@ -1,4 +1,5 @@
-dep/Vec2.d bin/Vec2.o: src/Vec2.cpp include/Vec2.hpp \
+dep/Vec2.d bin/Vec2.o: src/Vec2.cpp src/../include/Vec2.hpp \
+ src/../include/SDL_include.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++config.h \
@@ -13,7 +14,8 @@ dep/Vec2.d bin/Vec2.o: src/Vec2.cpp include/Vec2.hpp \
  C:/TDM-GCC-32/include/stdlib.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/stddef.h \
  C:/TDM-GCC-32/include/errno.h
-include/Vec2.hpp:
+src/../include/Vec2.hpp:
+src/../include/SDL_include.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++config.h:

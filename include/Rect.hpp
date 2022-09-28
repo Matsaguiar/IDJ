@@ -1,6 +1,7 @@
 #ifndef RECT_HPP
 #define RECT_HPP
- 
+
+#include "SDL_include.h"
 #include "Vec2.hpp"
 
 class Rect{

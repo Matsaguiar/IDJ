@@ -1,30 +1,28 @@
-#include "TileSet.hpp"
- 
-TileSet::TileSet(int tileWidth,int tileHeight, string file){
-    this->tileHeight = tileHeight;
-    this->tileWidth = tileWidth;
-    
-    GameObject *go = new GameObject();
-    this->tileSet = new Sprite(*go,file);
-    if (this->tileSet->IsOpen()){
-        this->rows = this->tileSet->GetHeight() / tileHeight;
-        this->columns = this->tileSet->GetWidth() / tileWidth;
+#include "../include/TileSet.hpp"
+
+TileSet::TileSet(int tileWidth, int tileHeight, string file) : tileSet(*(new GameObject()), file){
+    this -> tileWidth = tileWidth;
+    this -> tileHeight = tileHeight;
+
+    if(this -> tileSet.IsOpen() == true){
+        this -> columns = this -> tileSet.GetWidth()/tileWidth;
+        this -> rows = this -> tileSet.GetHeight()/tileHeight;
     }
 }
 
-void TileSet::RenderTile(int index, float x, float y){
-    if (index <= columns * rows) {
-        int clipX = (index % columns) * tileWidth;
-        int clipY = (index / columns) * tileHeight;
-        tileSet->SetClip(clipX, clipY, tileWidth, tileHeight);
-        tileSet->Render(x, y);
+void TileSet::RenderTile(unsigned index, float x, float y){
+    if(index <= unsigned((columns*rows)-1)){
+        int clipx = (index%columns) * tileWidth;
+        int clipy = (index/columns) * tileHeight;
+
+        tileSet.SetClip(clipx, clipy, tileWidth, tileHeight);
+        tileSet.Render(x, y);
     }
 }
 
 int TileSet::GetTileWidth(){
     return tileWidth;
 }
-
 int TileSet::GetTileHeight(){
     return tileHeight;
 }

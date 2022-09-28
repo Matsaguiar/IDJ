@@ -1,4 +1,5 @@
-dep/Rect.d bin/Rect.o: src/Rect.cpp include/Rect.hpp include/Vec2.hpp \
+dep/Rect.d bin/Rect.o: src/Rect.cpp src/../include/Rect.hpp \
+ src/../include/SDL_include.h src/../include/Vec2.hpp \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++config.h \
@@ -13,8 +14,9 @@ dep/Rect.d bin/Rect.o: src/Rect.cpp include/Rect.hpp include/Vec2.hpp \
  C:/TDM-GCC-32/include/stdlib.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/stddef.h \
  C:/TDM-GCC-32/include/errno.h
-include/Rect.hpp:
-include/Vec2.hpp:
+src/../include/Rect.hpp:
+src/../include/SDL_include.h:
+src/../include/Vec2.hpp:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/math.h:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/cmath:
 C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/mingw32/bits/c++config.h:

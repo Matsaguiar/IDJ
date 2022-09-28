@@ -1,12 +1,19 @@
 #ifndef GAMEOBJECT_HPP
 #define GAMEOBJECT_HPP
 
+#include "SDL_include.h"
+
 #include <vector>
 #include <memory>
-#include "Component.hpp"
-#include "Rect.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <string>
+
+#include "SDL_include.h"
+#include "bits/stdc++.h"
+#include <string>
+#include "Component.hpp"
+#include "Rect.hpp"
 
 using namespace std;
 
@@ -26,7 +33,8 @@ public:
     Rect box;
 
 private:
-    vector<unique_ptr<Component>> components;
+    vector <Component*> components;
+    // vector <unique_ptr<Component>> components;
     bool isDead;
 };
 

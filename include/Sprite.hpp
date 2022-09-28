@@ -7,6 +7,7 @@
 #include "SDL_include.h"
 #include "Component.hpp"
 #include "Resources.hpp"
+
 #include <string>
 
 using namespace std;

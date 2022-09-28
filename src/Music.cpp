@@ -1,4 +1,4 @@
-#include "Music.hpp"
+#include "../include/Music.hpp"
  
 Music::Music(){
     //music = nullptr;
@@ -25,7 +25,7 @@ void Music::Stop(int msToStop){
 }
 
 void Music::Open(string file){
-    music = Resources::GetMusic(file);
+    music = Mix_LoadMUS(file.c_str());
 }
 
 bool Music::IsOpen(){
