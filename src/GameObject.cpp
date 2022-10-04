@@ -2,6 +2,8 @@
 
 GameObject::GameObject(){
     isDead = false;
+    started = false;
+    this -> angleDeg = 0;
 }
 
 GameObject::~GameObject(){
@@ -19,7 +21,7 @@ void GameObject::Update(float dt){
 }   
 
 void GameObject::Render(){
-    for(unsigned int i = 0; i < this -> components.size(); i++){ //nao teve -1
+    for(unsigned int i = 0; i < this -> components.size(); i++){
         //components[i].get() -> Render();
         components[i]->Render(); 
     }
@@ -39,7 +41,7 @@ void GameObject::AddComponent(Component* cpt){
 }
 
 void GameObject::RemoveComponent(Component* cpt){
-    for(unsigned int i = 0; i < this -> components.size(); i++){ // não tem -1
+    for(unsigned int i = 0; i < this -> components.size(); i++){
         if(cpt == this -> components[i]){
             components.erase(this -> components.begin()+i);
             break;
@@ -54,4 +56,11 @@ Component* GameObject::GetComponent(string type){
         } 
     }
     return nullptr;
+}
+
+void GameObject::Start(){
+    for(unsigned int i = 0; i < components.size(); i++){
+        components[i] -> Start();
+    }
+    started = true;
 }

@@ -1,6 +1,7 @@
 #include "../include/State.hpp"
  
 State::State(){
+	started = false;
     GameObject* go = new GameObject();
 	
 	GameObject* mapGO = new GameObject();
@@ -22,12 +23,18 @@ State::State(){
 	go->box.x = 0;
 	go->box.y = 0;
 	objectArray.emplace_back(go);
-
-    music = new Music("./recursos/audio/stageState.ogg");
     
-    LoadAssets();
-    music->Play();
-    quitRequested = false;
+    GameObject* AlienGO = new GameObject();
+	AlienGO -> box.x = 512 - AlienGO -> box.w/2;
+	AlienGO -> box.y = 300 - AlienGO -> box.h/2;
+
+	Alien* alien = new Alien(*AlienGO, 5);
+	AlienGO -> AddComponent(alien);
+
+	objectArray.emplace_back(AlienGO);
+
+	quitRequested = false;
+	started = false;
 }
 
 bool State::QuitRequested(){
@@ -35,28 +42,23 @@ bool State::QuitRequested(){
 }
 
 void State::LoadAssets(){
-
+    music.Open("./recursos/audio/stageState.ogg");
 }
 
 void State::Update(float dt){
     InputManager inputManager = InputManager::GetInstance();
 
-	if(inputManager.KeyPress(ESCAPE_KEY) || inputManager.QuitRequested())
-		quitRequested = true;
+    Camera::Update(dt);
 
-	if(inputManager.KeyPress(SPACE_KEY)){
-		Vec2 objPos = Vec2(200, 0).Rotacao(-M_PI + M_PI*(rand() % 1001)/500.0 ) + Vec2(inputManager.GetMouseX(), inputManager.GetMouseY());
-		AddObject((int)objPos.x , (int)objPos.y);
-	}
+    quitRequested = inputManager.KeyPress(ESCAPE_KEY) || inputManager.QuitRequested();
 
-	Camera::Update(dt);
-    for(unsigned int i = 0; i < objectArray.size(); i++){
-        objectArray[i].get() -> Update(dt);
+    for(int i = 0; i < objectArray.size(); i++){
+        objectArray[i].get()->Update(dt);
     }
 
-    for(unsigned int i = 0; i < objectArray.size(); i++){
-        if (objectArray[i]->IsDead()){
-			objectArray.erase(objectArray.begin()+i);
+    for(int i = 0; i < objectArray.size(); i++) {
+        if (objectArray[i]->IsDead()) {
+            objectArray.erase(objectArray.begin() + i);
         }
     }
 }
@@ -140,4 +142,31 @@ void State::AddObject(int mouseX, int mouseY){
     go->AddComponent(face);
 
     objectArray.emplace_back(go);
+}
+
+void State::Start() {
+    LoadAssets();
+    music.Play();
+    for (auto &i : objectArray) {
+        i->Start();
+    }
+    started = true;
+}
+
+weak_ptr<GameObject> State::AddObject(GameObject *go) {
+    shared_ptr<GameObject> gameObject(go);
+    objectArray.push_back(gameObject);
+    if(started){
+        gameObject->Start();
+    }
+    return weak_ptr<GameObject>(gameObject);
+}
+
+weak_ptr<GameObject> State::GetObjectPtr(GameObject *go) {
+    for (auto &i : objectArray) {
+        if(i.get() == go){
+            return weak_ptr<GameObject>(i);
+        }
+    }
+    return weak_ptr<GameObject>();
 }

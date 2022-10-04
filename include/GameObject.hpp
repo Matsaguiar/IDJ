@@ -31,7 +31,10 @@ public:
     void RemoveComponent(Component* cpt);
     Component* GetComponent(string type);
     Rect box;
-
+    
+    void Start();
+    bool started;
+    double angleDeg;
 private:
     vector <Component*> components;
     // vector <unique_ptr<Component>> components;

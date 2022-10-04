@@ -20,6 +20,8 @@ public:
     void virtual Render() = 0;
     bool virtual Is(string type) = 0;
 
+    void virtual Start() = 0;
+
 protected:
     GameObject& associated;
 

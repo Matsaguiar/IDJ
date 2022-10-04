@@ -29,6 +29,8 @@ public:
     int GetDepth();
     bool Is(string type);
     void Update(float dt);
+    
+    void Start();
 };
 
 #endif

@@ -36,8 +36,5 @@ Vec2 Rect::GetCoordenadasCentro(){
 // }
 
 bool Rect::dentroRect(Vec2 v){ 
-    if(((v.x > this -> x) && (v.x < (this -> x + this -> w))) && ((v.y > this -> y) && (v.y < (this -> y + this -> h)))){
-        return true;
-    }
-    return false;
+    return ((v.x > this -> x) && (v.x < (this -> x + this -> w))) && ((v.y > this -> y) && (v.y < (this -> y + this -> h)));
 }

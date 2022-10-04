@@ -25,8 +25,7 @@ void InputManager::Update(){
     while(SDL_PollEvent(&event)){
         if(event.type == SDL_QUIT){
             quitRequested = true;
-        }
-        else{
+        }else{
             if(event.type == SDL_MOUSEBUTTONDOWN && event.key.repeat == false){
                 mouseState[event.button.button] = true;
                 mouseUpdate[event.button.button] = updateCounter;

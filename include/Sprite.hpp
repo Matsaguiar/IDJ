@@ -28,11 +28,16 @@ public:
     int GetHeight();
     bool IsOpen();
 
+    void SetScale(float scaleX, float ScaleY);
+    Vec2 GetScale();
+
 private: 
     SDL_Texture* texture;
     int width;
     int height;
     SDL_Rect clipRect;
+
+    Vec2 scale;
 };
 
 #endif

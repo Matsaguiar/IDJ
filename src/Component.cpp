@@ -8,6 +8,10 @@ Component::~Component(){
 
 }
 
+void Component::Start() {
+
+}
+
 // void Component::Update(float dt){
 
 // }

@@ -22,6 +22,7 @@ private:
     int tileWidth;
     int tileHeight;
 
+    GameObject* associated;
 };
 
 #endif

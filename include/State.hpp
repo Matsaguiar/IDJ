@@ -17,26 +17,32 @@
 #include "Vec2.hpp"
 #include "TileMap.hpp"
 #include "CameraFollower.hpp"
+#include "Alien.hpp"
 
 using namespace std;
 
 class State{
 public:
     State();
+    ~State();
     bool QuitRequested();
     void LoadAssets();
     void Update(float dt);
     void Render();
 
-    ~State();
+    void Start();
+    weak_ptr<GameObject> AddObject(GameObject* go);
+    weak_ptr<GameObject> GetObjectPtr(GameObject* go);
 
 private:
-    Music *music;
+    Music music;
     bool quitRequested;
+    bool started;
 
     void Input();
-    void AddObject(int mouseX, int mouseY);
-    vector<unique_ptr<GameObject>> objectArray;
+    //void AddObject(int mouseX, int mouseY);
+    //vector<unique_ptr<GameObject>> objectArray;
+    vector <shared_ptr<GameObject>> objectArray;
 };
 
 #endif

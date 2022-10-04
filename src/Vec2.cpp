@@ -35,18 +35,18 @@ Vec2 Vec2::Normal(){
    return *this;
 }
 
-// float Vec2::distancia(Vec2 &v){ 
-//     return (*this-v).magnitude();
-// }   
+float Vec2::distancia(Vec2 &v){ 
+    return (*this - v).magnitude();
+}   
 
-// float Vec2::inclinacaoX(){ 
-//     return atan2(this->y, this->x);
-// }
+float Vec2::inclinacaoX(){ 
+    return atan2(this->y, this->x);
+}
 
-// float Vec2::inclinacao(Vec2 &v){
-//     Vec2 v2 = (*this - v); 
-//     return atan2(v2.y, v2.x);
-// }
+float Vec2::inclinacao(Vec2 &v){
+    Vec2 v2 = (*this - v); 
+    return atan2(v2.y, v2.x);
+}
 
 Vec2 Vec2::Rotacao(float angulacao){ 
    Vec2 aux;
