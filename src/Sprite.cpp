@@ -88,18 +88,8 @@ void Sprite::Update(float dt){
 }
 
 void Sprite::SetScale(float scaleX, float scaleY) {
-    auto &box = associated.box;
-    if(scaleX != 0){
-        scale.x = scaleX;
-        box.w = width * scaleX;
-        box.x = box.GetCoordenadasCentro().x - box.w/2;
-    }
-
-    if(scaleY != 0){
-        scale.y = scaleY;
-        box.h = height * scaleY;
-        box.y = box.GetCoordenadasCentro().y - box.h/2;
-    }
+    scale.x = scaleX == 0 ? scale.x : scaleX;
+    scale.y = scaleY == 0 ? scale.y : scaleY;
 }
 
 Vec2 Sprite::GetScale() {

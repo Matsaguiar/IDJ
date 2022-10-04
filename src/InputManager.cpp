@@ -1,13 +1,13 @@
 #include "../include/InputManager.hpp"
 
-InputManager::InputManager(){
+InputManager::InputManager(){ 
+    mouseX = 0;
+    mouseY = 0;
+
     for(int i = 0; i < 6; i++){
         mouseState[i] = 0;
         mouseUpdate[i] = 0;
     }
-    
-    mouseX = 0;
-    mouseY = 0;
     
     updateCounter = 0;
     quitRequested = false;
@@ -49,12 +49,10 @@ void InputManager::Update(){
 bool InputManager::KeyPress(int key){
     auto it = keyUpdate.find(key);
     if(it != keyUpdate.end()){
-        if(it -> second == updateCounter){
+        if(it -> second == updateCounter)
             return keyState.find(key) -> second;
-        }
-        else{
+        else
             return false;
-        }
     }
     return false;    
 }
@@ -62,35 +60,30 @@ bool InputManager::KeyPress(int key){
 bool InputManager::KeyRelease(int key){
     auto it = keyUpdate.find(key);
     if(it != keyUpdate.end()){
-        if(it -> second == updateCounter){
+        if(it -> second == updateCounter)
             return !keyState.find(key) -> second;
-        }
-        else{
+        else
             return false;
-        }
     }
     return false;
 }
 
 bool InputManager::IsKeyDown(int key){
     auto it = keyState.find(key);
-    if(it != keyState.end()){
+    if(it != keyState.end())
         return it -> second;
-    }
     return false;
 }
 
 bool InputManager::MousePress(int button){
-    if(mouseUpdate[button] == updateCounter){
+    if(mouseUpdate[button] == updateCounter)
         return !mouseState[button];
-    }
     return false;
 }
 
 bool InputManager::MouseRelease(int button){
-    if(mouseUpdate[button] == updateCounter){
+    if(mouseUpdate[button] == updateCounter)
         return !mouseState[button];
-    }
     return false;
 }
 

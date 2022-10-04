@@ -5,7 +5,6 @@ Minion::Minion(GameObject& associated, weak_ptr<GameObject> alienCenter, float a
     Sprite* sprite = new Sprite(associated, "./recursos/img/minion.png");
     associated.AddComponent(sprite);
     double scale = (double)rand() / (double)(RAND_MAX/0.5)+1;
-    // double scale = 2;
     sprite -> SetScale(scale, scale);
     this -> alienCenter = alienCenter;
     if(shared_ptr<GameObject> go = alienCenter.lock()){

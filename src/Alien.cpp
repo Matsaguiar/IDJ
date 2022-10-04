@@ -45,14 +45,14 @@ void Alien::Update(float dt){
     if(taskQueue.size() >= 1){
         Action action = taskQueue.front();
         if(action.type == MV){
-            Vec2 destiny_center;
-            destiny_center.x = action.pos.x - associated.box.w/2;
-            destiny_center.y = action.pos.y - associated.box.h/2;
+            Vec2 dest;
+            dest.x = action.pos.x - associated.box.w/2;
+            dest.y = action.pos.y - associated.box.h/2;
 
-            speed += (destiny_center-alien_pos).Normal();
+            speed += (dest-alien_pos).Normal();
             alien_pos += speed*dt*spd;
-            if(std::abs(alien_pos.distancia(destiny_center)) <= 5){
-                alien_pos = destiny_center;
+            if(std::abs(alien_pos.distancia(dest)) <= 5){
+                alien_pos = dest;
                 taskQueue.pop();
             }
             associated.box.x = alien_pos.x;

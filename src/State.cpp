@@ -43,6 +43,7 @@ bool State::QuitRequested(){
 
 void State::LoadAssets(){
     music.Open("./recursos/audio/stageState.ogg");
+	music.Play();
 }
 
 void State::Update(float dt){
@@ -151,20 +152,22 @@ void State::Start() {
 	started = true;	
 }
 
-weak_ptr<GameObject> State::AddObject(GameObject *go) {
-    shared_ptr<GameObject> gameObject(go);
-    objectArray.push_back(gameObject);
-    if(started){
-        gameObject->Start();
-    }
-    return weak_ptr<GameObject>(gameObject);
+weak_ptr<GameObject> State::AddObject(GameObject* go){
+	shared_ptr<GameObject> shared_ptr_go(go);
+	objectArray.push_back(shared_ptr_go);
+	if(started == true){
+		shared_ptr_go -> Start();
+	}
+	weak_ptr<GameObject> weak_ptr_go(shared_ptr_go);
+	return weak_ptr_go;
 }
 
-weak_ptr<GameObject> State::GetObjectPtr(GameObject *go) {
-    for (auto &i : objectArray) {
-        if(i.get() == go){
-            return weak_ptr<GameObject>(i);
-        }
-    }
-    return weak_ptr<GameObject>();
+weak_ptr<GameObject> State::GetObjectPtr(GameObject* go){
+	for(unsigned int i = 0; i < objectArray.size(); i++){
+		if(objectArray[i].get() == go){
+			weak_ptr<GameObject> weak_ptr_go(objectArray[i]);
+			return weak_ptr_go;
+		}
+	}
+	return {}; 
 }

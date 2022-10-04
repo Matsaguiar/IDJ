@@ -48,6 +48,7 @@ Game::~Game(){
 }
 
 void Game::Run(){
+    state->Start();
     while(state->QuitRequested() == false){
         CalculaDeltaTime();
         InputManager::GetInstance().Update();
