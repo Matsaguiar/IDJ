@@ -8,9 +8,8 @@
 
 using namespace std;
 
-// #define MV Action::ActionType::MOVE
-// #define SHT Action::ActionType::SHOOT
-
+#define MV Action::ActionType::MOVE
+#define SHT Action::ActionType::SHOOT
 
 class Alien : public Component{
 public:

@@ -50,3 +50,7 @@ void Minion::Shoot(Vec2 target) {
     State* instance = &Game::GetInstance().GetState();
     instance -> AddObject(go);
 }
+
+void Minion::Start(){
+    
+}

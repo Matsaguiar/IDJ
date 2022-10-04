@@ -16,17 +16,19 @@ class Sprite : public Component{
 public:
     Sprite(GameObject &associated);
     Sprite(GameObject &associated, string file);
-    void Update(float dt);
-    bool Is(string type);
 
     ~Sprite();
     void Open(string file);
     void SetClip(int x, int y, int w, int h);
-    void Render();
     void Render(float x, float y);
     int GetWidth();
     int GetHeight();
     bool IsOpen();
+
+    void Start();
+    void Update(float dt);
+    void Render();
+    bool Is(string type);
 
     void SetScale(float scaleX, float ScaleY);
     Vec2 GetScale();

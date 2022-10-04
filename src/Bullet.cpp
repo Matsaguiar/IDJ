@@ -20,13 +20,23 @@ bool Bullet::Is(string type){
 }
 
 void Bullet::Update(float dt){
-    associated.box += speed * dt;
-    distanceLeft -= (speed * dt).magnitude();
-    if(distanceLeft < 0){
+    Vec2 pos = Vec2(associated.box.x, associated.box.y);
+    pos += speed * dt;
+
+    associated.box.x = pos.x;
+    associated.box.y = pos.y;
+
+    distanceLeft -= (speed*dt).magnitude();
+
+    if(distanceLeft <= 0){
         associated.RequestDelete();
     }
 }
 
 void Bullet::Render(){
+    
+}
+
+void Bullet::Start(){
     
 }

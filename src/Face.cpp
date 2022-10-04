@@ -34,3 +34,7 @@ bool Face::Is(string type){
         return true;
     return false;
 }
+
+void Face::Start(){
+    
+}

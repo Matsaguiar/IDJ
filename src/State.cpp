@@ -125,7 +125,7 @@ State::~State(){
 	}
 }*/
 
-void State::AddObject(int mouseX, int mouseY){
+/*void State::AddObject(int mouseX, int mouseY){
     GameObject *go = new GameObject();
     
     Sprite *sprite = new Sprite(*go, "./recursos/img/penguinface.png");
@@ -141,15 +141,14 @@ void State::AddObject(int mouseX, int mouseY){
     go->AddComponent(face);
 
     objectArray.emplace_back(go);
-}
+}*/
 
 void State::Start() {
-    LoadAssets();
-    music.Play();
-    for (auto &i : objectArray) {
-        i->Start();
-    }
-    started = true;
+	LoadAssets();
+	for(unsigned int i = 0; i < objectArray.size(); i++){
+		objectArray[i] -> Start();
+	}
+	started = true;	
 }
 
 weak_ptr<GameObject> State::AddObject(GameObject *go) {

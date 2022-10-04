@@ -10,10 +10,12 @@
 class CameraFollower : public Component {
 public:
     CameraFollower(GameObject& associated);
+
+    void Start();
     void Update(float dt);
     void Render();
     bool Is(string type);
-
+    
 };
 
 #endif

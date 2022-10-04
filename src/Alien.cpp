@@ -4,17 +4,13 @@
 Alien::Alien(GameObject& associated, int nMinions) : Component(associated){
     Sprite* sprite = new Sprite(associated, "./recursos/img/alien.png");
     associated.AddComponent(sprite);
-    hp = 50;
-    //hp = 100;
+    hp = 100;
     speed = Vec2(0, 0);
     this -> nMinions = nMinions;
 }
 
 Alien::~Alien(){
-    for (auto &i : minionArray) {
-        i.lock()->RequestDelete();
-    }
-    minionArray.clear();
+
 }
 
 void Alien::Start(){
@@ -33,50 +29,44 @@ void Alien::Render(){
 }
 
 void Alien::Update(float dt){
-    InputManager inputManager = InputManager::GetInstance();
-    auto posX = (int)(inputManager.GetMouseX() + Camera::pos.x), posY = (int)(inputManager.GetMouseY() + Camera::pos.y);
-
-    if(inputManager.MousePress(LEFT_MOUSE_BUTTON)){
-        taskQueue.push(*new Action(Action::SHOOT, posX , posY));
-    } else if(inputManager.MousePress(RIGHT_MOUSE_BUTTON)){
-
-        //impede de acumular eventos na fila, sobrescrevendo sempre que há um evento
-        while(!taskQueue.empty()){
-            taskQueue.pop();
-        }
-        taskQueue.push(*new Action(Action::MOVE, posX, posY));
+    int spd = 256;
+    InputManager input= InputManager::GetInstance();
+    associated.angleDeg -= M_PI/180*dt*spd*8;
+    if(input.MousePress(LEFT_MOUSE_BUTTON)){
+        taskQueue.push(Action(SHT, input.GetMouseX()+Camera::pos.x, input.GetMouseY()+Camera::pos.y));
+    }
+    else if(input.MousePress(RIGHT_MOUSE_BUTTON)){
+        taskQueue.push(Action(MV, input.GetMouseX()+Camera::pos.x, input.GetMouseY()+Camera::pos.y));
     }
 
-    if(!taskQueue.empty()){
-        auto action = taskQueue.front();
+    speed = Vec2(0, 0);
+    Vec2 alien_pos = Vec2(associated.box.x, associated.box.y);
 
-        if(action.type == Action::MOVE){
-            Vec2 deltaX = {500 * dt, 0};
-            Vec2 calculado = action.pos - Vec2(associated.box.x + (associated.box.w/2), associated.box.y + (associated.box.h/2));
-            Vec2 real = deltaX.Rotacao(calculado.InclX());
+    if(taskQueue.size() >= 1){
+        Action action = taskQueue.front();
+        if(action.type == MV){
+            Vec2 destiny_center;
+            destiny_center.x = action.pos.x - associated.box.w/2;
+            destiny_center.y = action.pos.y - associated.box.h/2;
 
-            //Distancia minima para o Alien nao chegar ao destino no proximo frame
-            if(calculado.magnitude() < real.magnitude()){
-                associated.box += calculado;
+            speed += (destiny_center-alien_pos).Normal();
+            alien_pos += speed*dt*spd;
+            if(std::abs(alien_pos.distancia(destiny_center)) <= 5){
+                alien_pos = destiny_center;
                 taskQueue.pop();
-            } else {
-                associated.box += real;
             }
-
-        } else if(action.type == Action::SHOOT){
-            auto target = InputManager::GetInstance().GetMouse();
-
-            //Pega o minion com a menor distância do alvo
-            const shared_ptr<GameObject> &ptr = minionArray[NearestMinion(target)].lock();
-            auto minion = (Minion*)(ptr->GetComponent("Minion"));
-            minion->Shoot(target);
-
-            taskQueue.pop();
+            associated.box.x = alien_pos.x;
+            associated.box.y = alien_pos.y;
+        }
+        if(action.type == SHT){
+            int minionN = ClosestMinion(action.pos);
+            if(shared_ptr<GameObject> go = minionArray[minionN].lock()){
+                Minion* minion = (Minion*) go -> GetComponent("Minion");
+                minion -> Shoot(action.pos);
+                taskQueue.pop();
+            }
         }
     }
-
-    associated.angleDeg += -2;
-
     if(hp <= 0){
         associated.RequestDelete();
     }

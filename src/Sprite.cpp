@@ -58,6 +58,10 @@ void Sprite::Render(float x, float y){
     }
 }
 
+void Sprite::Start(){
+    
+}
+
 int Sprite::GetWidth(){
     return width * scale.x;
 }

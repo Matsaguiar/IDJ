@@ -18,3 +18,7 @@ bool CameraFollower::Is (string type){
         return true;
     return false;
 }
+
+void CameraFollower::Start(){
+    
+}
