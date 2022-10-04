@@ -91,3 +91,7 @@ bool TileMap::Is(string type){
 void TileMap::Update(float dt){
 
 }
+
+void TileMap::Start(){
+    
+}

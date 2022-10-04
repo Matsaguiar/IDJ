@@ -1,12 +1,9 @@
 #ifndef TILESET_HPP
 #define TILESET_HPP
-#define INCLUDE_SDL
  
 #include "SDL_include.h"
 #include "Sprite.hpp"
 #include <string>
-
-using namespace std;
 
 class TileSet{
 public: 

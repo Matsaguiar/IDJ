@@ -46,26 +46,25 @@ void State::LoadAssets(){
 }
 
 void State::Update(float dt){
-    InputManager inputManager = InputManager::GetInstance();
+	InputManager instance = InputManager::GetInstance();
+	if(instance.KeyPress(ESCAPE_KEY) || instance.QuitRequested() == true){
+		quitRequested = true;
+	}
 
-    Camera::Update(dt);
-
-    quitRequested = inputManager.KeyPress(ESCAPE_KEY) || inputManager.QuitRequested();
-
-    for(int i = 0; i < objectArray.size(); i++){
-        objectArray[i].get()->Update(dt);
+	Camera::Update(dt);
+    for(unsigned int i = 0; i < objectArray.size(); i++){
+        objectArray[i] -> Update(dt);
     }
-
-    for(int i = 0; i < objectArray.size(); i++) {
-        if (objectArray[i]->IsDead()) {
-            objectArray.erase(objectArray.begin() + i);
+    for(unsigned int i = 0; i < objectArray.size(); i++){
+        if (objectArray[i]->IsDead()){
+			objectArray.erase(objectArray.begin()+i);
         }
     }
 }
 
 void State::Render(){
    	for(unsigned int i = 0; i < objectArray.size(); i++){
-		objectArray[i].get() -> Render();
+		objectArray[i] -> Render();
 	}
 }
 

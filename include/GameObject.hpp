@@ -9,7 +9,6 @@
 #include <ctime>
 #include <string>
 
-#include "SDL_include.h"
 #include "bits/stdc++.h"
 #include <string>
 #include "Component.hpp"

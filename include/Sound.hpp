@@ -5,6 +5,8 @@
 
 #include "Component.hpp"
 #include "GameObject.hpp"
+#include "Resources.hpp"
+
 #include <string>
 
 using namespace std;

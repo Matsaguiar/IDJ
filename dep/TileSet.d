@@ -1,8 +1,9 @@
 dep/TileSet.d bin/TileSet.o: src/TileSet.cpp src/../include/TileSet.hpp \
- src/../include/SDL_include.h C:/SDL2/include/SDL2/SDL.h \
- C:/SDL2/include/SDL2/SDL_main.h C:/SDL2/include/SDL2/SDL_stdinc.h \
- C:/SDL2/include/SDL2/SDL_config.h C:/SDL2/include/SDL2/SDL_platform.h \
- C:/SDL2/include/SDL2/begin_code.h C:/SDL2/include/SDL2/close_code.h \
+ src/../include/SDL_include.h src/../include/Sprite.hpp \
+ C:/SDL2/include/SDL2/SDL.h C:/SDL2/include/SDL2/SDL_main.h \
+ C:/SDL2/include/SDL2/SDL_stdinc.h C:/SDL2/include/SDL2/SDL_config.h \
+ C:/SDL2/include/SDL2/SDL_platform.h C:/SDL2/include/SDL2/begin_code.h \
+ C:/SDL2/include/SDL2/close_code.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/stddef.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/stdarg.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/stdint.h \
@@ -109,9 +110,8 @@ dep/TileSet.d bin/TileSet.o: src/TileSet.cpp src/../include/TileSet.hpp \
  C:/SDL2/include/SDL2/SDL_shape.h C:/SDL2/include/SDL2/SDL_system.h \
  C:/SDL2/include/SDL2/SDL_timer.h C:/SDL2/include/SDL2/SDL_version.h \
  C:/SDL2/include/SDL2/SDL_locale.h C:/SDL2/include/SDL2/SDL_misc.h \
- src/../include/Sprite.hpp C:/SDL2/include/SDL2/SDL_image.h \
- C:/SDL2/include/SDL2/SDL.h src/../include/Component.hpp \
- C:/SDL2/include/SDL2/SDL_mixer.h \
+ C:/SDL2/include/SDL2/SDL_image.h C:/SDL2/include/SDL2/SDL.h \
+ src/../include/Component.hpp C:/SDL2/include/SDL2/SDL_mixer.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/string \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/stringfwd.h \
  C:/TDM-GCC-32/lib/gcc/mingw32/10.3.0/include/c++/bits/memoryfwd.h \
@@ -367,6 +367,7 @@ dep/TileSet.d bin/TileSet.o: src/TileSet.cpp src/../include/TileSet.hpp \
  src/../include/Resources.hpp
 src/../include/TileSet.hpp:
 src/../include/SDL_include.h:
+src/../include/Sprite.hpp:
 C:/SDL2/include/SDL2/SDL.h:
 C:/SDL2/include/SDL2/SDL_main.h:
 C:/SDL2/include/SDL2/SDL_stdinc.h:
@@ -505,7 +506,6 @@ C:/SDL2/include/SDL2/SDL_timer.h:
 C:/SDL2/include/SDL2/SDL_version.h:
 C:/SDL2/include/SDL2/SDL_locale.h:
 C:/SDL2/include/SDL2/SDL_misc.h:
-src/../include/Sprite.hpp:
 C:/SDL2/include/SDL2/SDL_image.h:
 C:/SDL2/include/SDL2/SDL.h:
 src/../include/Component.hpp:

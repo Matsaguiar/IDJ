@@ -4,7 +4,6 @@
 #define INCLUDE_SDL
 #include "SDL_include.h"
 
-#include "SDL_include.h"
 #include "Bits/stdc++.h"
 #include <memory>
 #include <math.h>
