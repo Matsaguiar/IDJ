@@ -39,6 +39,7 @@ Game::Game(string title, int width, int height){
 }
 
 Game::~Game(){
+    delete state;
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     Mix_CloseAudio();

@@ -1,4 +1,5 @@
 #include "../include/Sound.hpp"
+#include "../include/Resources.hpp"
  
 Sound::Sound(GameObject& associated) : Component(associated){
     this -> chunk = nullptr;
@@ -30,7 +31,7 @@ void Sound::Stop(){
 }
 
 void Sound::Open(string file){
-    this -> chunk = Mix_LoadWAV(file.c_str());
+    this -> chunk = Resources::GetSound(file);
     if(this -> chunk == nullptr){
         printf("Sound Open fail\n");
     }

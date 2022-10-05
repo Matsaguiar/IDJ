@@ -50,6 +50,7 @@ void State::Update(float dt){
 	InputManager instance = InputManager::GetInstance();
 	if(instance.KeyPress(ESCAPE_KEY) || instance.QuitRequested() == true){
 		quitRequested = true;
+		music.Stop();
 	}
 
 	Camera::Update(dt);
